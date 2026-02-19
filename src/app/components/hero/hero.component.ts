@@ -15,6 +15,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   private titles = [
     'Software Engineer',
     'Observability Builder',
+    'Software Consultant',
     'Public Speaker',
     'Problem Solver',
     'Lifelong Learner',
