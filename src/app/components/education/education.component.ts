@@ -34,38 +34,44 @@ export class EducationComponent implements OnInit {
       icon: '🔶',
       title: 'Software Engineering Apprenticeship',
       issuer: 'OrangeMethod OrangeWorks — The Home Depot',
-      year: 'May 9, 2025',
+      year: '2025',
       type: 'Certificate of Completion'
     },
     {
       icon: '🔶',
       title: 'Senior Software Project Manager',
       issuer: 'OrangeMethod — The Home Depot',
-      year: 'April 20, 2024',
+      year: '2024',
       type: 'Certificate of Completion'
     },
     {
       icon: '🔶',
       title: 'Product Support Apprenticeship',
       issuer: 'OrangeMethod — The Home Depot',
-      year: 'December 3, 2021',
+      year: '2021',
       type: 'Certificate of Completion'
     }
   ];
+
+  internships: { icon: string; title: string; issuer: string; year: string; type: string }[] = [];
+
+  get apprenticeshipsAndInternships() {
+    return [...this.apprenticeships, ...this.internships];
+  }
 
   toastmasters = [
     {
       icon: '🏆',
       title: 'Level 5 — Dynamic Leadership',
       issuer: 'Toastmasters International Pathways',
-      year: 'August 12, 2024',
+      year: '2024',
       type: 'Certificate of Completion'
     },
     {
       icon: '🏆',
       title: 'Level 5 — Engaging Humor',
       issuer: 'Toastmasters International Pathways',
-      year: 'August 12, 2024',
+      year: '2024',
       type: 'Certificate of Completion'
     },
     {
@@ -79,7 +85,7 @@ export class EducationComponent implements OnInit {
       icon: '🏅',
       title: 'Area Director Club Reporting Best Practices Training Award',
       issuer: 'Toastmasters — Division E Team',
-      year: 'September 22, 2024',
+      year: '2024',
       type: 'Certificate of Appreciation'
     }
   ];
@@ -89,7 +95,7 @@ export class EducationComponent implements OnInit {
       icon: '📘',
       title: 'Angular Complete Guide',
       issuer: "O'Reilly / Packt Publishing",
-      year: 'January 2, 2026',
+      year: '2026',
       type: 'Certificate of Completion'
     },
     {
@@ -103,21 +109,21 @@ export class EducationComponent implements OnInit {
       icon: '💡',
       title: 'Corporate Trainer Journey',
       issuer: 'Skillsoft Digital Badge',
-      year: '',
+      year: '2024',
       type: 'Journey Completion'
     },
     {
       icon: '🤖',
       title: 'Responsible Application & Guardrails for Generative AI',
       issuer: 'Skillsoft Digital Badge',
-      year: '',
+      year: '2025',
       type: 'Track Completion'
     },
     {
       icon: '💬',
       title: 'Communication Skills',
       issuer: 'Skillsoft Digital Badge',
-      year: '',
+      year: '2024–2025',
       type: 'Track Completion'
     }
   ];

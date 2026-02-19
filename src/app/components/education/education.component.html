@@ -22,19 +22,23 @@
       </div>
     </div>
 
-    <!-- APPRENTICESHIPS -->
+    <!-- APPRENTICESHIPS & INTERNSHIPS -->
     <div class="edu-block reveal">
       <div class="block-header">
         <span class="block-icon">🔶</span>
-        <h3 class="block-title">Apprenticeships</h3>
+        <h3 class="block-title">Apprenticeships & Internships</h3>
         <div class="block-line"></div>
       </div>
       <div class="certs-grid">
-        <div class="cert-card card" *ngFor="let a of apprenticeships">
-          <div class="cert-type">{{ a.type }}</div>
-          <h4 class="cert-title">{{ a.title }}</h4>
-          <p class="cert-issuer">{{ a.issuer }}</p>
-          <span class="cert-year" *ngIf="a.year">{{ a.year }}</span>
+        <div class="cert-card card" *ngFor="let item of apprenticeshipsAndInternships">
+          <div class="cert-type">{{ item.type }}</div>
+          <h4 class="cert-title">{{ item.title }}</h4>
+          <p class="cert-issuer">{{ item.issuer }}</p>
+          <span class="cert-year" *ngIf="item.year">{{ item.year }}</span>
+        </div>
+        <div class="cert-card card open-slot" *ngIf="apprenticeshipsAndInternships.length === 0">
+          <div class="open-icon">+</div>
+          <p class="open-label">Coming Soon</p>
         </div>
       </div>
     </div>
