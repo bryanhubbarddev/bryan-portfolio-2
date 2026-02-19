@@ -1,0 +1,87 @@
+<section class="section education" id="education">
+  <div class="max-w">
+
+    <p class="section-label reveal">Education & Certifications</p>
+    <h2 class="section-title reveal">Always <span>Learning</span></h2>
+
+    <!-- DEGREES -->
+    <div class="edu-block reveal">
+      <div class="block-header">
+        <span class="block-icon">🎓</span>
+        <h3 class="block-title">Degrees</h3>
+        <div class="block-line"></div>
+      </div>
+      <div class="degrees-grid">
+        <div class="degree-card card" *ngFor="let d of degrees">
+          <div class="degree-badge">{{ d.type }}</div>
+          <h4 class="degree-title">{{ d.degree }}</h4>
+          <p class="degree-field">{{ d.field }}</p>
+          <p class="degree-school">{{ d.school }}</p>
+          <span class="degree-year">{{ d.year }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- APPRENTICESHIPS -->
+    <div class="edu-block reveal">
+      <div class="block-header">
+        <span class="block-icon">🔶</span>
+        <h3 class="block-title">Apprenticeships</h3>
+        <div class="block-line"></div>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card card" *ngFor="let a of apprenticeships">
+          <div class="cert-type">{{ a.type }}</div>
+          <h4 class="cert-title">{{ a.title }}</h4>
+          <p class="cert-issuer">{{ a.issuer }}</p>
+          <span class="cert-year" *ngIf="a.year">{{ a.year }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOASTMASTERS -->
+    <div class="edu-block reveal">
+      <div class="block-header">
+        <span class="block-icon">🏆</span>
+        <h3 class="block-title">Toastmasters</h3>
+        <div class="block-line"></div>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card card" *ngFor="let t of toastmasters">
+          <div class="cert-type">{{ t.type }}</div>
+          <h4 class="cert-title">{{ t.title }}</h4>
+          <p class="cert-issuer">{{ t.issuer }}</p>
+          <span class="cert-year" *ngIf="t.year">{{ t.year }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="edu-block reveal">
+      <div class="block-header">
+        <span class="block-icon">📜</span>
+        <h3 class="block-title">Certifications</h3>
+        <div class="block-line"></div>
+      </div>
+      <div class="certs-grid">
+        <div class="cert-card card" *ngFor="let c of certifications">
+          <div class="cert-icon">{{ c.icon }}</div>
+          <div class="cert-type">{{ c.type }}</div>
+          <h4 class="cert-title">{{ c.title }}</h4>
+          <p class="cert-issuer">{{ c.issuer }}</p>
+          <div class="cert-footer">
+            <span class="cert-year" *ngIf="c.year">{{ c.year }}</span>
+            <span class="cert-duration" *ngIf="c.duration">{{ c.duration }}</span>
+          </div>
+        </div>
+
+        <!-- Open slots -->
+        <div class="cert-card card open-slot" *ngFor="let s of openSlots">
+          <div class="open-icon">+</div>
+          <p class="open-label">{{ s.label }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

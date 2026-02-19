@@ -7,6 +7,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { ProjectsComponent } from './components/projects/projects.component';
 import { PresentationsComponent } from './components/presentations/presentations.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { EducationComponent } from './components/education/education.component';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { ContactComponent } from './components/contact/contact.component';
     NavComponent,
     HeroComponent,
     AboutComponent,
+    EducationComponent,
     SkillsComponent,
     ExperienceComponent,
     ProjectsComponent,
@@ -26,6 +28,7 @@ import { ContactComponent } from './components/contact/contact.component';
     <main>
       <app-hero></app-hero>
       <app-about></app-about>
+      <app-education></app-education>
       <app-skills></app-skills>
       <app-experience></app-experience>
       <app-projects></app-projects>
