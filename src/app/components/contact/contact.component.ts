@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class ContactComponent implements OnInit {
   links = [
     { label: 'Email', value: 'bryan.hubbard.dev@gmail.com', href: 'mailto:bryan.hubbard.dev@gmail.com', icon: '✉️' },
-    { label: 'LinkedIn', value: 'linkedin.com/in/bryan-hubbard', href: 'https://linkedin.com/in/bryan-hubbard', icon: '💼' },
+    { label: 'LinkedIn', value: 'linkedin.com/in/bryan-b-hubbard-ll-ms-ed', href: 'https://www.linkedin.com/in/bryan-b-hubbard-ll-ms-ed', icon: '💼' },
     { label: 'GitHub', value: 'github.com/bryanhubbard', href: 'https://github.com/bryanhubbard', icon: '🐙' },
   ];
 
