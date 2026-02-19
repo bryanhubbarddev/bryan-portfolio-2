@@ -1,0 +1,22 @@
+<section id="skills" class="section skills">
+  <div class="max-w">
+    <p class="section-label reveal">What I Bring</p>
+    <h2 class="section-title reveal">Skills &amp; <span>Technologies</span></h2>
+
+    <div class="skills-grid">
+      @for (group of skillGroups; track group.category) {
+        <div class="card skill-card reveal">
+          <div class="skill-header">
+            <span class="skill-icon">{{ group.icon }}</span>
+            <h3>{{ group.category }}</h3>
+          </div>
+          <div class="skill-tags">
+            @for (skill of group.skills; track skill) {
+              <span class="skill-tag">{{ skill }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

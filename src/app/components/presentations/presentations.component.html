@@ -1,0 +1,41 @@
+<section id="presentations" class="section presentations">
+  <div class="max-w">
+    <p class="section-label reveal">On Stage & On Screen</p>
+    <h2 class="section-title reveal">Speaking &amp; <span>Presentations</span></h2>
+
+    <p class="section-intro reveal">
+      From enterprise engineering stages to Carnegie Hall — storytelling and communication
+      are as core to my work as clean code.
+    </p>
+
+    <div class="pres-grid">
+      @for (pres of presentations; track pres.title) {
+        <div class="card pres-card reveal">
+          <div class="pres-icon">{{ pres.icon }}</div>
+
+          <!-- Video placeholder -->
+          @if (pres.videoPlaceholder) {
+            <div class="video-placeholder">
+              <div class="play-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <span>Video Coming Soon</span>
+            </div>
+          }
+
+          <div class="pres-type">{{ pres.type }}</div>
+          <h3>{{ pres.title }}</h3>
+          <p>{{ pres.description }}</p>
+
+          <div class="pres-tags">
+            @for (tag of pres.tags; track tag) {
+              <span class="skill-tag">{{ tag }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,74 @@
+<section id="hero" class="hero">
+  <!-- Animated background grid -->
+  <div class="grid-bg"></div>
+
+  <!-- Glowing orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-label">
+      <span class="dot"></span>
+      Available for Opportunities
+    </div>
+
+    <h1 class="hero-name">
+      Bryan B.<br />
+      <span>Hubbard II</span>
+    </h1>
+
+    <div class="hero-title">
+      <span class="typewriter">{{ displayText() }}</span>
+      <span class="cursor">|</span>
+    </div>
+
+    <p class="hero-tagline">
+      From the retail floor to Carnegie Hall to enterprise engineering —<br />
+      I bring the <em>whole story</em> to every line of code.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-number">13+</span>
+        <span class="stat-label">Years at THD</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">20+</span>
+        <span class="stat-label">MFEs Modernized</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-number">$2.7M</span>
+        <span class="stat-label">Projected Value</span>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#projects" (click)="scrollToAbout($event)" class="btn-primary">
+        View My Work
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a href="mailto:bryan.hubbard.dev@gmail.com" class="btn-secondary">
+        Get In Touch
+      </a>
+    </div>
+
+    <div class="hero-scroll" (click)="scrollToAbout($event)">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </div>
+
+  <!-- Floating tech tags -->
+  <div class="tech-float">
+    <span class="tag">Angular 19</span>
+    <span class="tag">TypeScript</span>
+    <span class="tag">New Relic</span>
+    <span class="tag">React</span>
+    <span class="tag">Flutter</span>
+    <span class="tag">Spring Boot</span>
+  </div>
+</section>

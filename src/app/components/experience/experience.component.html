@@ -1,0 +1,43 @@
+<section id="experience" class="section experience">
+  <div class="max-w">
+    <p class="section-label reveal">Where I've Been</p>
+    <h2 class="section-title reveal">Work <span>Experience</span></h2>
+
+    <div class="exp-layout reveal">
+      <!-- Job tabs -->
+      <div class="exp-tabs">
+        @for (job of jobs; track job.title; let i = $index) {
+          <button
+            class="exp-tab"
+            [class.active]="activeJob() === i"
+            (click)="setActive(i)"
+          >
+            <span class="tab-title">{{ job.title }}</span>
+            <span class="tab-period">{{ job.period }}</span>
+          </button>
+        }
+      </div>
+
+      <!-- Job detail -->
+      <div class="exp-detail">
+        <div class="exp-header">
+          <h3>{{ jobs[activeJob()].title }}</h3>
+          <div class="exp-meta">
+            <span class="exp-company">{{ jobs[activeJob()].company }}</span>
+            <span class="exp-divider">·</span>
+            <span class="exp-period">{{ jobs[activeJob()].period }}</span>
+            <span class="exp-type">{{ jobs[activeJob()].type }}</span>
+          </div>
+        </div>
+        <ul class="exp-highlights">
+          @for (h of jobs[activeJob()].highlights; track h) {
+            <li>
+              <span class="bullet">▹</span>
+              {{ h }}
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

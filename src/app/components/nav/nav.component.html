@@ -1,0 +1,26 @@
+<nav [class.scrolled]="scrolled()">
+  <div class="nav-inner">
+    <a class="logo" href="#" (click)="scrollTo('#hero', $event)">
+      BH<span>II</span>
+    </a>
+
+    <ul class="nav-links" [class.open]="menuOpen()">
+      @for (link of navLinks; track link.label) {
+        <li>
+          <a [href]="link.href" (click)="scrollTo(link.href, $event)">
+            {{ link.label }}
+          </a>
+        </li>
+      }
+      <li>
+        <a href="mailto:bryan.hubbard.dev@gmail.com" class="cta-btn">Hire Me</a>
+      </li>
+    </ul>
+
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
