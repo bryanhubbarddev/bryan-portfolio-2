@@ -105,6 +105,15 @@
   animation: fadeInUp 0.8s ease 0.4s both;
 }
 
+.hero-title .typewriter {
+  color: #8899aa;
+  transition: color 0.5s ease;
+}
+
+.hero-title .typewriter.phrase-complete {
+  color: #f0b429;
+}
+
 .cursor {
   color: #00d4aa;
   animation: blink 1s step-end infinite;
@@ -129,6 +138,17 @@
   color: #f0b429;
   font-style: normal;
   font-weight: 500;
+}
+
+.hero-tagline .tagline-code {
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", "Source Code Pro", Menlo, monospace;
+  font-size: 0.95em;
+  color: #a0b0c0;
+  letter-spacing: 0.02em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .hero-stats {

@@ -11,14 +11,17 @@ import { CommonModule } from '@angular/common';
 export class HeroComponent implements OnInit, OnDestroy {
   displayText = signal('');
   showCursor = signal(true);
+  phraseComplete = signal(false);
 
   private titles = [
     'Software Engineer',
+    'Problem Solver',
+    'AI/ML Engineer',
     'Observability Builder',
     'Software Consultant',
-    'Public Speaker',
-    'Problem Solver',
-    'Lifelong Learner',
+    'Product Support Engineer',
+    'Cyber Security Analyst',
+    'Keynote Speaker',
   ];
 
   private titleIndex = 0;
@@ -41,11 +44,13 @@ export class HeroComponent implements OnInit, OnDestroy {
     if (!this.isDeleting) {
       this.displayText.set(current.slice(0, ++this.charIndex));
       if (this.charIndex === current.length) {
+        this.phraseComplete.set(true);
         this.isDeleting = true;
         this.timeoutId = setTimeout(() => this.typeWriter(), 2200);
         return;
       }
     } else {
+      this.phraseComplete.set(false);
       this.displayText.set(current.slice(0, --this.charIndex));
       if (this.charIndex === 0) {
         this.isDeleting = false;
