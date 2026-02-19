@@ -14,13 +14,13 @@ export class NavComponent {
 
   navLinks = [
     { label: 'About', href: '#about' },
+    { label: 'Education', href: '#education' },
     { label: 'Skills', href: '#skills' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
     { label: 'Speaking', href: '#presentations' },
     { label: 'Contact', href: '#contact' },
   ];
-
   @HostListener('window:scroll')
   onScroll() {
     this.scrolled.set(window.scrollY > 50);
