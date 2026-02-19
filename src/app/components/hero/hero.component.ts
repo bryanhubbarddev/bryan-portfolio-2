@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 export class HeroComponent implements OnInit, OnDestroy {
   displayText = signal('');
-  showCursor = signal(true);
   phraseComplete = signal(false);
 
   private titles = [
