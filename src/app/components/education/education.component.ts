@@ -39,13 +39,6 @@ export class EducationComponent implements OnInit {
     },
     {
       icon: '🔶',
-      title: 'Senior Software Project Manager',
-      issuer: 'OrangeMethod — The Home Depot',
-      year: '2024',
-      type: 'Certificate of Completion'
-    },
-    {
-      icon: '🔶',
       title: 'Product Support Apprenticeship',
       issuer: 'OrangeMethod — The Home Depot',
       year: '2021',
@@ -99,20 +92,6 @@ export class EducationComponent implements OnInit {
       type: 'Certificate of Completion'
     },
     {
-      icon: '💡',
-      title: 'Senior Software Project Manager',
-      issuer: 'Skillsoft Digital Badge',
-      year: '2024',
-      type: 'Track Completion'
-    },
-    {
-      icon: '💡',
-      title: 'Corporate Trainer Journey',
-      issuer: 'Skillsoft Digital Badge',
-      year: '2024',
-      type: 'Journey Completion'
-    },
-    {
       icon: '🤖',
       title: 'Responsible Application & Guardrails for Generative AI',
       issuer: 'Skillsoft Digital Badge',
@@ -125,6 +104,27 @@ export class EducationComponent implements OnInit {
       issuer: 'Skillsoft Digital Badge',
       year: '2024–2025',
       type: 'Track Completion'
+    },
+    {
+      icon: '🔶',
+      title: 'Senior Software Project Manager',
+      issuer: 'OrangeMethod — The Home Depot',
+      year: '2024',
+      type: 'Certificate of Completion'
+    },
+    {
+      icon: '💡',
+      title: 'Senior Software Project Manager',
+      issuer: 'Skillsoft Digital Badge',
+      year: '2024',
+      type: 'Track Completion'
+    },
+    {
+      icon: '💡',
+      title: 'Corporate Trainer Journey',
+      issuer: 'Skillsoft Digital Badge',
+      year: '2024',
+      type: 'Journey Completion'
     }
   ];
 
