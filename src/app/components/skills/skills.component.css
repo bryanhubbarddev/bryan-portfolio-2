@@ -63,7 +63,8 @@
   z-index: 10;
 }
 
-.skill-tag-wrap:hover::after {
+.skill-tag-wrap:hover::after,
+.skill-tag-wrap:focus-visible::after {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) scale(1);
