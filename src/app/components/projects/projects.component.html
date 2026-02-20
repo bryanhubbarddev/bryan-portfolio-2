@@ -3,16 +3,36 @@
     <p class="section-label reveal">What I've Built</p>
     <h2 class="section-title reveal">Featured <span>Projects</span></h2>
 
-    <div class="projects-list">
-      @for (project of projects; track project.number) {
-        <div class="project-card card reveal" [class.featured]="project.featured">
-          @if (project.featured) {
-            <div class="featured-badge">Featured</div>
-          }
-          <div class="project-number">{{ project.number }}</div>
-          <div class="project-body">
-            <h3>{{ project.title }}</h3>
-            <p class="project-team">{{ project.team }}</p>
+    <p class="projects-intro reveal">Projects grouped by focus area. Each highlights the main problem solved and impact delivered.</p>
+
+    @for (section of projectSections; track section.name) {
+      <div class="project-section">
+        <h3 class="section-heading reveal">{{ section.name }}</h3>
+        <div class="projects-list">
+          @for (project of section.projects; track project.number) {
+            <div class="project-card card reveal" [class.featured]="project.featured">
+              @if (project.featured) {
+                <div class="featured-badge">Featured</div>
+              }
+              <div class="project-meta">
+                <div class="project-number">{{ project.number }}</div>
+                @if (project.percent) {
+                  <span class="project-percent">{{ project.percent }}</span>
+                }
+              </div>
+              <div class="project-body">
+                @if (project.mainConcept) {
+                  <p class="main-concept">{{ project.mainConcept }}</p>
+                }
+                <h3>{{ project.title }}</h3>
+                @if (project.figures && project.figures.length) {
+                  <div class="project-figures">
+                    @for (figure of project.figures; track figure) {
+                      <span class="figure-tag">{{ figure }}</span>
+                    }
+                  </div>
+                }
+                <p class="project-team">{{ project.team }}</p>
             <p class="project-description">{{ project.description }}</p>
 
             @if (project.platformCoverage) {
@@ -75,7 +95,9 @@
             </div>
           </div>
         </div>
-      }
-    </div>
+          }
+        </div>
+      </div>
+    }
   </div>
 </section>

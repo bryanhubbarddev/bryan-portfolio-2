@@ -1,3 +1,29 @@
+.projects-intro {
+  color: #8899aa;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  max-width: 42rem;
+}
+
+.project-section {
+  margin-bottom: 3rem;
+}
+
+.project-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-heading {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #00d4aa;
+  margin-bottom: 1.25rem;
+  margin-top: 0;
+}
+
 .projects-list {
   display: flex;
   flex-direction: column;
@@ -32,6 +58,12 @@
   background: rgba(0,212,170,0.05);
 }
 
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
 .project-number {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3rem;
@@ -40,7 +72,40 @@
   padding-top: 0.2rem;
 }
 
+.project-percent {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  color: #00d4aa;
+  font-weight: 600;
+}
+
 .project-card.featured .project-number { color: #00d4aa; }
+
+.main-concept {
+  font-size: 0.9rem;
+  color: #00d4aa;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  font-style: italic;
+}
+
+.project-figures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.figure-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: #8899aa;
+  background: rgba(0,212,170,0.08);
+  border: 1px solid rgba(0,212,170,0.15);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
 
 .project-body h3 {
   font-size: 1.5rem;

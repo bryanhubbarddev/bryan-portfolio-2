@@ -15,6 +15,10 @@ export interface PlatformCoverage {
 export interface Project {
   number: string;
   title: string;
+  mainConcept?: string;
+  section?: string;
+  percent?: string;
+  figures?: string[];
   team: string;
   description: string;
   keyContributions: string[];
@@ -37,6 +41,8 @@ export class ProjectsComponent implements OnInit {
     {
       number: '01',
       title: 'HomerCon Admin Application',
+      mainConcept: 'Virtual conference logistics management',
+      section: 'Enterprise & Observability',
       team: 'Orange Method Onboarding and Workforce (OMOW) Apprenticeship Program',
       description:
         'Built a full-stack administrative application for managing virtual conference logistics including timeslots, tracks, and scheduling.',
@@ -61,6 +67,10 @@ export class ProjectsComponent implements OnInit {
     {
       number: '02',
       title: 'Enterprise Observability Modernization (New Relic Implementation)',
+      mainConcept: 'Distributed monitoring & telemetry across 20+ applications',
+      section: 'Enterprise & Observability',
+      percent: '88% incident reduction',
+      figures: ['20+ MFEs', 'Desktop + Mobile'],
       team: 'Team Oxygen',
       description:
         'Modernized observability across distributed desktop and mobile applications by replacing outdated New Relic telemetry and enabling real-time monitoring, performance tracking, and error visibility across frontend and backend with New Relic.',
@@ -91,6 +101,9 @@ export class ProjectsComponent implements OnInit {
     {
       number: '03',
       title: 'Distribution Fulfillment Center (DFC) Visibility and Fulfillment Timing Tool Suite',
+      mainConcept: 'Real-time warehouse visibility & fulfillment timing',
+      section: 'Operations & Supply Chain',
+      figures: ['2 integrated tools', 'Enterprise data integration'],
       team: 'Distribution Fulfillment Center (DFC) Team',
       description:
         'Developed warehouse visibility and fulfillment timing tools for Distribution Fulfillment Centers to support supervisor decision-making, associate tracking, and order cutoff monitoring.',
@@ -134,6 +147,9 @@ export class ProjectsComponent implements OnInit {
     {
       number: '04',
       title: 'Orange Inspiration Application and Store Data Documentation Initiative',
+      mainConcept: 'Angular learning platform & store data validation',
+      section: 'Learning & Portfolio',
+      figures: ['2,034 store codes validated'],
       team: 'Pro Order Up Team',
       description:
         'Designed and developed the Orange Inspiration application as an Angular learning and portfolio platform while supporting enterprise store data validation and documentation initiatives.',
@@ -155,6 +171,20 @@ export class ProjectsComponent implements OnInit {
       featured: false,
     },
   ];
+
+  /** Groups projects by section for display. Preserves section order. */
+  get projectSections(): { name: string; projects: Project[] }[] {
+    const sections = new Map<string, Project[]>();
+    for (const p of this.projects) {
+      const s = p.section ?? 'Other';
+      if (!sections.has(s)) sections.set(s, []);
+      sections.get(s)!.push(p);
+    }
+    const order = ['Enterprise & Observability', 'Operations & Supply Chain', 'Learning & Portfolio', 'Other'];
+    return order
+      .filter((name) => sections.has(name))
+      .map((name) => ({ name, projects: sections.get(name)! }));
+  }
 
   ngOnInit() {
     setTimeout(() => {
