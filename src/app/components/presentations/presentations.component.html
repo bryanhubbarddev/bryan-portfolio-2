@@ -4,14 +4,16 @@
     <h2 class="section-title reveal">Speaking &amp; <span>Presentations</span></h2>
 
     <p class="section-intro reveal">
-      From enterprise engineering stages to Carnegie Hall — storytelling and communication
-      are as core to my work as clean code.
+      From the enterprise engineering stage to Area Director of Toastmasters, New York and Georgia —
+      storytelling and communications are the core to my work and clean code.
     </p>
 
     <div class="pres-grid">
       @for (pres of presentations; track pres.title) {
         <div class="card pres-card reveal">
-          <div class="pres-icon">{{ pres.icon }}</div>
+          @if (pres.icon) {
+            <div class="pres-icon">{{ pres.icon }}</div>
+          }
 
           <!-- Video placeholder -->
           @if (pres.videoPlaceholder) {

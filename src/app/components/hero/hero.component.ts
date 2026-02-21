@@ -10,15 +10,20 @@ import { CommonModule } from '@angular/common';
 })
 export class HeroComponent implements OnInit, OnDestroy {
   displayText = signal('');
-  showCursor = signal(true);
+  phraseComplete = signal(false);
 
   private titles = [
     'Software Engineer',
+    'Technology Presenter',
+    'Project Manager',
+    'Corporate Trainer',
+    'Project Analyst',
+    'Full-Stack Developer',
     'Observability Builder',
-    'Software Consultant',
-    'Public Speaker',
+    'AI/ML Practitioner',
     'Problem Solver',
-    'Lifelong Learner',
+    'Software Consultant',
+    'Leadership Mentor and Coach',
   ];
 
   private titleIndex = 0;
@@ -41,11 +46,13 @@ export class HeroComponent implements OnInit, OnDestroy {
     if (!this.isDeleting) {
       this.displayText.set(current.slice(0, ++this.charIndex));
       if (this.charIndex === current.length) {
+        this.phraseComplete.set(true);
         this.isDeleting = true;
         this.timeoutId = setTimeout(() => this.typeWriter(), 2200);
         return;
       }
     } else {
+      this.phraseComplete.set(false);
       this.displayText.set(current.slice(0, --this.charIndex));
       if (this.charIndex === 0) {
         this.isDeleting = false;

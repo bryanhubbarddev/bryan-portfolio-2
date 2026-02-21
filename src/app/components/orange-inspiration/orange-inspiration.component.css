@@ -1,0 +1,42 @@
+.orange-inspiration {
+  background: rgba(0, 212, 170, 0.02);
+  border-top: 1px solid rgba(0, 212, 170, 0.08);
+  border-bottom: 1px solid rgba(0, 212, 170, 0.08);
+}
+
+.oi-content {
+  max-width: 720px;
+}
+
+.oi-card {
+  padding: 2.5rem;
+}
+
+.oi-description {
+  font-size: 1.05rem;
+  color: #8899aa;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.oi-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.oi-tag {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  background: rgba(0, 212, 170, 0.08);
+  border: 1px solid rgba(0, 212, 170, 0.2);
+  border-radius: 6px;
+  color: #00d4aa;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.oi-actions {
+  display: flex;
+  gap: 1rem;
+}

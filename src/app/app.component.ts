@@ -8,6 +8,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { PresentationsComponent } from './components/presentations/presentations.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { EducationComponent } from './components/education/education.component';
+import { OrangeInspirationComponent } from './components/orange-inspiration/orange-inspiration.component';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ import { EducationComponent } from './components/education/education.component';
     SkillsComponent,
     ExperienceComponent,
     ProjectsComponent,
+    OrangeInspirationComponent,
     PresentationsComponent,
     ContactComponent,
   ],
@@ -32,6 +34,7 @@ import { EducationComponent } from './components/education/education.component';
       <app-skills></app-skills>
       <app-experience></app-experience>
       <app-projects></app-projects>
+      <app-orange-inspiration></app-orange-inspiration>
       <app-presentations></app-presentations>
       <app-contact></app-contact>
     </main>

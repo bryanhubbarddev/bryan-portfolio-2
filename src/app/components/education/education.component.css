@@ -27,6 +27,18 @@
   white-space: nowrap;
 }
 
+.block-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #00d4aa;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.block-link:hover {
+  text-decoration: underline;
+}
+
 .block-line {
   flex: 1;
   height: 1px;
@@ -43,6 +55,22 @@
 .degree-card {
   position: relative;
   padding: 2rem;
+}
+
+.degree-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.cert-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 4px;
 }
 
 .degree-badge {
@@ -87,6 +115,38 @@
   border-radius: 4px;
 }
 
+/* ── Certification categories ────────────────────────────────────────────── */
+.cert-category {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  color: #00d4aa;
+  letter-spacing: 0.05em;
+  margin: 2rem 0 1rem 0;
+}
+
+.cert-category:first-of-type {
+  margin-top: 0;
+}
+
+.cert-wallet-cta {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #1e2d3d;
+}
+
+.cert-wallet-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: #00d4aa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cert-wallet-link:hover {
+  color: #ffffff;
+}
+
 /* ── Certs Grid ──────────────────────────────────────────────────────────── */
 .certs-grid {
   display: grid;
@@ -126,6 +186,30 @@
   color: #8899aa;
 }
 
+.cert-description {
+  font-size: 0.78rem;
+  color: #8899aa;
+  line-height: 1.5;
+  font-style: italic;
+  margin: 0.4rem 0;
+}
+
+.cert-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.5rem 0;
+}
+
+.cert-skill-badge {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  background: rgba(0, 212, 170, 0.08);
+  border: 1px solid rgba(0, 212, 170, 0.2);
+  border-radius: 4px;
+  color: #00d4aa;
+}
+
 .cert-footer {
   display: flex;
   align-items: center;
@@ -138,6 +222,22 @@
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.68rem;
   color: #4a5568;
+}
+
+.cert-verify-btn {
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  background: rgba(0, 212, 170, 0.15);
+  border: 1px solid rgba(0, 212, 170, 0.3);
+  border-radius: 4px;
+  color: #00d4aa;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cert-verify-btn:hover {
+  background: rgba(0, 212, 170, 0.25);
+  border-color: rgba(0, 212, 170, 0.5);
 }
 
 .cert-duration {
