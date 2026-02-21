@@ -27,6 +27,7 @@ export class SkillsComponent implements OnInit {
       skills: [
         { name: 'Angular', tooltip: 'Web application framework' },
         { name: 'React', tooltip: 'UI library' },
+        { name: 'Next.js', tooltip: 'React framework for full-stack web apps' },
         { name: 'TypeScript', tooltip: 'Typed JavaScript' },
         { name: 'JavaScript', tooltip: 'Programming language' },
         { name: 'HTML', tooltip: 'Markup language for web pages' },
@@ -75,6 +76,7 @@ export class SkillsComponent implements OnInit {
       icon: '',
       skills: [
         { name: 'Flutter', tooltip: 'Cross-platform UI toolkit' },
+        { name: 'React Native', tooltip: 'Cross-platform mobile framework' },
         { name: 'Dart', tooltip: 'Programming language (Flutter)' },
         { name: 'Android Studio', tooltip: 'Android development IDE' },
         { name: 'Mobile Telemetry', tooltip: 'Mobile app monitoring' },

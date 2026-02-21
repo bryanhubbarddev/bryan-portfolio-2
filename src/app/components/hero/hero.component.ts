@@ -14,12 +14,16 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   private titles = [
     'Software Engineer',
-    'Observability Builder',
+    'Technology Presenter',
+    'Project Manager',
+    'Corporate Trainer',
+    'Project Analyst',
     'Full-Stack Developer',
-    'Keynote Speaker',
+    'Observability Builder',
     'AI/ML Practitioner',
     'Problem Solver',
     'Software Consultant',
+    'Leadership Mentor and Coach',
   ];
 
   private titleIndex = 0;
