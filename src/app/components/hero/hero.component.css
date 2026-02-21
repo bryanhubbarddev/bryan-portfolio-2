@@ -54,6 +54,28 @@
   width: 100%;
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-text {
+  min-width: 0;
+}
+
+.hero-photo-wrap {
+  justify-self: end;
+}
+
+.hero-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 212, 170, 0.35);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.8s ease 0.3s both;
 }
 
 .hero-label {
@@ -278,7 +300,8 @@
   z-index: 10;
 }
 
-.tech-float .tag-wrap:hover .tag::after {
+.tech-float .tag-wrap:hover .tag::after,
+.tech-float .tag-wrap:focus-within .tag::after {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) scale(1);
@@ -310,15 +333,6 @@
 .tech-float .tag-wrap:nth-child(10) .tag { animation: tagFloat 4.2s ease-in-out 1.3s infinite alternate; }
 .tech-float .tag-wrap:nth-child(11) .tag { animation: tagFloat 4.6s ease-in-out 1.6s infinite alternate; }
 .tech-float .tag-wrap:nth-child(12) .tag { animation: tagFloat 5.2s ease-in-out 1.9s infinite alternate; }
-.tech-float .tag-wrap:nth-child(13) .tag { animation: tagFloat 3.1s ease-in-out 0.65s infinite alternate; }
-.tech-float .tag-wrap:nth-child(14) .tag { animation: tagFloat 3.4s ease-in-out 0.95s infinite alternate; }
-.tech-float .tag-wrap:nth-child(15) .tag { animation: tagFloat 3.8s ease-in-out 1.15s infinite alternate; }
-.tech-float .tag-wrap:nth-child(16) .tag { animation: tagFloat 4.1s ease-in-out 1.35s infinite alternate; }
-.tech-float .tag-wrap:nth-child(17) .tag { animation: tagFloat 4.4s ease-in-out 1.55s infinite alternate; }
-.tech-float .tag-wrap:nth-child(18) .tag { animation: tagFloat 4.7s ease-in-out 1.75s infinite alternate; }
-.tech-float .tag-wrap:nth-child(19) .tag { animation: tagFloat 5.1s ease-in-out 1.95s infinite alternate; }
-.tech-float .tag-wrap:nth-child(20) .tag { animation: tagFloat 5.4s ease-in-out 2.15s infinite alternate; }
-.tech-float .tag-wrap:nth-child(21) .tag { animation: tagFloat 5.6s ease-in-out 2.25s infinite alternate; }
 
 @keyframes tagFloat {
   from { transform: translateY(0); }
@@ -342,8 +356,24 @@
 
 @media (max-width: 900px) {
   .tech-float { display: none; }
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hero-photo-wrap {
+    justify-self: center;
+    order: -1;
+  }
+  .hero-photo {
+    width: 180px;
+    height: 180px;
+  }
 }
 
 @media (max-width: 600px) {
   .stat-number { font-size: 1.5rem; }
+  .hero-photo {
+    width: 150px;
+    height: 150px;
+  }
 }

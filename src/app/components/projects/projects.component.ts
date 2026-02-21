@@ -43,7 +43,7 @@ export class ProjectsComponent implements OnInit {
       title: 'HomerCon Admin Application',
       mainConcept: 'Virtual conference logistics management',
       section: 'Enterprise & Observability',
-      team: 'Orange Method Onboarding and Workforce (OMOW) Apprenticeship Program',
+      team: 'OrangeMethod Software Engineering (OMOW & OME) Apprenticeship Program',
       description:
         'Built a full-stack administrative application for managing virtual conference logistics including timeslots, tracks, and scheduling.',
       keyContributions: [
@@ -69,9 +69,8 @@ export class ProjectsComponent implements OnInit {
       title: 'Enterprise Observability Modernization (New Relic Implementation)',
       mainConcept: 'Distributed monitoring & telemetry across 20+ applications',
       section: 'Enterprise & Observability',
-      percent: '88% incident reduction',
       figures: ['20+ MFEs', 'Desktop + Mobile'],
-      team: 'Team Oxygen',
+      team: 'Team Oxygen and OrangeWorks The Home Depot',
       description:
         'Modernized observability across distributed desktop and mobile applications by replacing outdated New Relic telemetry and enabling real-time monitoring, performance tracking, and error visibility across frontend and backend with New Relic.',
       platformCoverage: {
@@ -100,8 +99,8 @@ export class ProjectsComponent implements OnInit {
     },
     {
       number: '03',
-      title: 'Distribution Fulfillment Center (DFC) Visibility and Fulfillment Timing Tool Suite',
-      mainConcept: 'Real-time warehouse visibility & fulfillment timing',
+      title: 'Distribution Fulfillment Center (DFC) Visibility and Fulfillment Timing Tool',
+      mainConcept: 'Real-time warehouse visibility & fulfillment timing of orders',
       section: 'Operations & Supply Chain',
       figures: ['2 integrated tools', 'Enterprise data integration'],
       team: 'Distribution Fulfillment Center (DFC) Team',
@@ -122,10 +121,10 @@ export class ProjectsComponent implements OnInit {
           name: 'Priority Window Dashboard',
           purpose: 'Tracks fulfillment timing from customer order placement through cutoff windows to ensure orders are processed and loaded before truck departure.',
           details: [
-            'Displays order cutoff times',
+            'Displays order cutoff times (OECT)',
             'Monitors fulfillment urgency and timing risk',
             'Helps supervisors prioritize workload by delivery windows',
-            'Tracks order placement to truck loading cutoff',
+            'Tracks order placement to truck loading cutoff time (CT)',
           ],
         },
       ],
@@ -138,6 +137,7 @@ export class ProjectsComponent implements OnInit {
         'TypeScript',
         'React',
         'Next.js',
+        'Prometheus',
         'Data Visualization',
         'Supply Chain APIs',
       ],
@@ -172,7 +172,7 @@ export class ProjectsComponent implements OnInit {
     },
   ];
 
-  /** Groups projects by section for display. Preserves section order. */
+  /** Groups projects by section for display. Preserves section order. Unknown sections are appended. */
   get projectSections(): { name: string; projects: Project[] }[] {
     const sections = new Map<string, Project[]>();
     for (const p of this.projects) {
@@ -181,9 +181,13 @@ export class ProjectsComponent implements OnInit {
       sections.get(s)!.push(p);
     }
     const order = ['Enterprise & Observability', 'Operations & Supply Chain', 'Learning & Portfolio', 'Other'];
-    return order
+    const known = order
       .filter((name) => sections.has(name))
       .map((name) => ({ name, projects: sections.get(name)! }));
+    const unknown = Array.from(sections.entries())
+      .filter(([name]) => !order.includes(name))
+      .map(([name, projects]) => ({ name, projects }));
+    return [...known, ...unknown];
   }
 
   ngOnInit() {

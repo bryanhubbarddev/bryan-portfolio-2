@@ -12,7 +12,7 @@ export class AboutComponent implements OnInit {
   @ViewChildren('reveal') revealEls!: QueryList<ElementRef>;
 
   milestones = [
-    { year: '2013 – 2017', label: 'Cashier to Specialist roles', place: 'Store #6564, Corpus Christi' },
+    { year: '2013 - 2017', label: 'Cashier to Specialist roles', place: 'Store #6564, Corpus Christi' },
     { year: '2018', label: 'Specialty Supervisor', place: 'Store #6564, Corpus Christi' },
     { year: '2019', label: 'Security Operations Analyst', place: 'Security Officer · Global Operations · Worldwide · Austin & Georgia' },
     { year: '2020', label: 'OrangeMethod Apprenticeship', place: 'Product Support · Texas and Georgia · Virtual and Remote' },

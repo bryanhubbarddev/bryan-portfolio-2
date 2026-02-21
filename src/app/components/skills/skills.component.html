@@ -7,7 +7,9 @@
       @for (group of skillGroups; track group.category) {
         <div class="card skill-card reveal">
           <div class="skill-header">
-            <span class="skill-icon">{{ group.icon }}</span>
+            @if (group.icon) {
+              <span class="skill-icon">{{ group.icon }}</span>
+            }
             <h3>{{ group.category }}</h3>
           </div>
           <div class="skill-tags">

@@ -7,12 +7,14 @@
     <!-- DEGREES -->
     <div class="edu-block reveal">
       <div class="block-header">
-        <span class="block-icon">🎓</span>
         <h3 class="block-title">Degrees</h3>
         <div class="block-line"></div>
       </div>
       <div class="degrees-grid">
         <div class="degree-card card" *ngFor="let d of degrees">
+          @if (d.image) {
+            <img [src]="d.image" [alt]="d.degree" class="degree-image" />
+          }
           <div class="degree-badge">{{ d.type }}</div>
           <h4 class="degree-title">{{ d.degree }}</h4>
           <p class="degree-field">{{ d.field }}</p>
@@ -25,12 +27,14 @@
     <!-- APPRENTICESHIPS & INTERNSHIPS -->
     <div class="edu-block reveal">
       <div class="block-header">
-        <span class="block-icon">🔶</span>
         <h3 class="block-title">Apprenticeships & Internships</h3>
         <div class="block-line"></div>
       </div>
       <div class="certs-grid">
         <div class="cert-card card" *ngFor="let item of apprenticeshipsAndInternships">
+          @if (item.image) {
+            <img [src]="item.image" [alt]="item.title" class="cert-image" />
+          }
           <div class="cert-type">{{ item.type }}</div>
           <h4 class="cert-title">{{ item.title }}</h4>
           <p class="cert-issuer">{{ item.issuer }}</p>
@@ -46,8 +50,8 @@
     <!-- TOASTMASTERS -->
     <div class="edu-block reveal">
       <div class="block-header">
-        <span class="block-icon">🏆</span>
-        <h3 class="block-title">Toastmasters</h3>
+        <h3 class="block-title">Toastmasters International</h3>
+        <a href="https://www.toastmasters.org/" target="_blank" rel="noopener noreferrer" class="block-link">toastmasters.org</a>
         <div class="block-line"></div>
       </div>
       <div class="certs-grid">
@@ -63,26 +67,37 @@
     <!-- CERTIFICATIONS -->
     <div class="edu-block reveal">
       <div class="block-header">
-        <span class="block-icon">📜</span>
         <h3 class="block-title">Certifications</h3>
         <div class="block-line"></div>
       </div>
-      <div class="certs-grid">
-        <div class="cert-card card" *ngFor="let c of certifications">
-          <div class="cert-icon">{{ c.icon }}</div>
-          <div class="cert-type">{{ c.type }}</div>
-          <h4 class="cert-title">{{ c.title }}</h4>
-          <p class="cert-issuer">{{ c.issuer }}</p>
-          <div class="cert-footer">
-            <span class="cert-year" *ngIf="c.year">{{ c.year }}</span>
-          </div>
+      @for (group of certificationGroups; track group.category) {
+        <h4 class="cert-category">{{ group.category }}</h4>
+        <div class="certs-grid">
+          @for (c of group.certs; track c.title + '-' + c.issuer) {
+            <div class="cert-card card">
+              <div class="cert-type">{{ c.type }}</div>
+              <h4 class="cert-title">{{ c.title }}</h4>
+              <p class="cert-issuer">{{ c.issuer }}</p>
+              @if (c.description) {
+                <p class="cert-description">{{ c.description }}</p>
+              }
+              <div class="cert-skills">
+                @for (skill of c.skillsValidated; track skill) {
+                  <span class="cert-skill-badge" [attr.title]="skillTooltips[skill] || skill">{{ skill }}</span>
+                }
+              </div>
+              <div class="cert-footer">
+                <span class="cert-year">{{ c.year }}</span>
+                @if (c.verificationUrl) {
+                  <a [href]="c.verificationUrl" target="_blank" rel="noopener noreferrer" class="cert-verify-btn">Verify</a>
+                }
+              </div>
+            </div>
+          }
         </div>
-
-        <!-- Open slots -->
-        <div class="cert-card card open-slot" *ngFor="let s of openSlots">
-          <div class="open-icon">+</div>
-          <p class="open-label">{{ s.label }}</p>
-        </div>
+      }
+      <div class="cert-wallet-cta">
+        <a [href]="skillsoftWalletUrl" target="_blank" rel="noopener noreferrer" class="cert-wallet-link">View all 173 credentials →</a>
       </div>
     </div>
 

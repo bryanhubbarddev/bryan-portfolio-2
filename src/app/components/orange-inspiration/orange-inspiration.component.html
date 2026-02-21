@@ -1,0 +1,32 @@
+<section id="orange-inspiration" class="section orange-inspiration">
+  <div class="max-w">
+    <p class="section-label reveal">Spotlight</p>
+    <h2 class="section-title reveal">Orange Inspiration <span>App</span></h2>
+
+    <div class="oi-content reveal">
+      <div class="oi-card card">
+        <p class="oi-description">
+          An Angular learning and portfolio platform designed to showcase leadership, growth, and technical work.
+          Built and deployed on Firebase and Google Cloud Platform. This app demonstrates full-stack Angular
+          development with modern practices—standalone components, signals, and responsive design.
+        </p>
+        <div class="oi-tags">
+          @for (tech of techStack; track tech) {
+            <span class="oi-tag">{{ tech }}</span>
+          }
+        </div>
+        <div class="oi-actions">
+          <a [href]="appUrl" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            View Live App
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#projects" (click)="scrollToProjects($event)" class="btn-secondary">
+            View in Projects
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

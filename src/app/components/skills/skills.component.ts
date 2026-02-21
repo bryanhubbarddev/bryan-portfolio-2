@@ -23,7 +23,7 @@ export class SkillsComponent implements OnInit {
   skillGroups: SkillGroup[] = [
     {
       category: 'Frontend Engineering',
-      icon: '⚡',
+      icon: '',
       skills: [
         { name: 'Angular', tooltip: 'Web application framework' },
         { name: 'React', tooltip: 'UI library' },
@@ -40,7 +40,7 @@ export class SkillsComponent implements OnInit {
     },
     {
       category: 'Backend & Integration',
-      icon: '🔧',
+      icon: '',
       skills: [
         { name: 'Java', tooltip: 'Programming language' },
         { name: 'Spring Boot', tooltip: 'Backend framework' },
@@ -53,7 +53,7 @@ export class SkillsComponent implements OnInit {
     },
     {
       category: 'Observability & Monitoring',
-      icon: '📊',
+      icon: '',
       skills: [
         { name: 'New Relic Browser', tooltip: 'Browser performance monitoring' },
         { name: 'New Relic Mobile', tooltip: 'Mobile app telemetry' },
@@ -71,7 +71,7 @@ export class SkillsComponent implements OnInit {
     },
     {
       category: 'Mobile & Cross-Platform',
-      icon: '📱',
+      icon: '',
       skills: [
         { name: 'Flutter', tooltip: 'Cross-platform UI toolkit' },
         { name: 'Dart', tooltip: 'Programming language (Flutter)' },
@@ -80,16 +80,20 @@ export class SkillsComponent implements OnInit {
     },
     {
       category: 'THD Systems',
-      icon: '🏠',
+      icon: '',
       skills: [
         { name: 'HOME', tooltip: 'THD internal system' },
         { name: 'OrderUp', tooltip: 'THD internal system' },
         { name: 'Compost', tooltip: 'THD internal system' },
+        { name: 'HDW', tooltip: 'Home Depot Warehouse' },
+        { name: 'DFC', tooltip: 'Distribution Fulfillment Center' },
+        { name: 'AOSS', tooltip: 'Application Operations Store System' },
+        { name: 'Team Oxygen', tooltip: 'THD observability & modernization team' },
       ],
     },
     {
       category: 'Tools & DevOps',
-      icon: '🛠️',
+      icon: '',
       skills: [
         { name: 'Git', tooltip: 'Version control' },
         { name: 'GitHub', tooltip: 'Code hosting & collaboration' },
@@ -112,7 +116,7 @@ export class SkillsComponent implements OnInit {
     },
     {
       category: 'Professional Skills',
-      icon: '🎤',
+      icon: '',
       skills: [
         { name: 'Public Speaking', tooltip: 'Presenting to audiences' },
         { name: 'Technical Presentations', tooltip: 'Tech-focused talks' },
