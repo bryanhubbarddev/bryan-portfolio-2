@@ -36,7 +36,7 @@ export class ExperienceComponent implements OnInit {
         'Writes custom code and scripts to automate infrastructure, monitoring services, and test cases; performs destructive testing to ensure production resiliency',
         'Configures commercial off-the-shelf solutions and creates meaningful dashboards, logging, and alerting to proactively capture and address issues',
         'Angular 19 Execution: Delivering high-performance features using Standalone Components and Signals for optimized, fine-grained reactivity',
-        'Polyglot Engineering: Delivers features across 12+ coding languages and frameworks including Angular, React, TypeScript, Java, Python, SQL, Flutter, and Dart across web, mobile, and backend systems',
+        'Polyglot Engineering: Delivers features across 10+ coding languages and frameworks including Angular, React, TypeScript, Java, Python, SQL, Flutter, and Dart across web, mobile, and backend systems',
         'System Integration: Engineered robust data pipelines between frontend interfaces and Java/Spring Boot APIs across six core pillars: COM, DNA, POS, Finance, RECON, and Salesforce',
         'Collaborates within agile processes and assists in creating better team workflows; builds partnerships and works collaboratively with diverse cross-functional groups',
         'Agile Documentation: Enhanced developer experience (DevEx) by authoring architectural decision records in Confluence and managing cross-functional epics in Jira to align technical delivery with platform goals',
