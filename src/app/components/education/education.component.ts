@@ -53,7 +53,7 @@ export class EducationComponent implements OnInit {
       issuer: 'OrangeMethod OrangeWorks — The Home Depot',
       year: '2025',
       type: 'Certificate of Completion',
-      image: 'assets/images/Sodtware.Engineering.png'
+      image: 'assets/images/Software.Engineering.png'
     },
     {
       icon: '🔶',
