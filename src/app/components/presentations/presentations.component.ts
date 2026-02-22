@@ -11,36 +11,27 @@ import { CommonModule } from '@angular/common';
 export class PresentationsComponent implements OnInit {
   presentations = [
     {
+      title: 'Tech Ed',
+      type: 'Technology Education',
+      icon: '',
+      description:
+        'Delivered technology education sessions, sharing technical knowledge and best practices with teams and stakeholders.',
+      tags: ['Tech Ed', 'Training', 'Knowledge Sharing'],
+      videoPlaceholder: true,
+    },
+    {
       title: 'HomerCon — Innovation & Observability',
       type: 'Conference Keynote',
-      icon: '🎯',
+      icon: '',
       description:
         'Delivered enterprise technology presentations at The Home Depot\'s internal HomerCon conference, focusing on innovation, observability strategy, and technology transformation.',
       tags: ['Observability', 'Innovation', 'Enterprise Tech'],
       videoPlaceholder: true,
     },
     {
-      title: 'Carnegie Hall Speaking Engagement',
-      type: 'Toastmasters Recognition',
-      icon: '🎤',
-      description:
-        'Presented on stage at Carnegie Hall as part of Toastmasters International leadership recognition — highlighting excellence in public speaking, thought leadership, and communication mastery.',
-      tags: ['Public Speaking', 'Leadership', 'Carnegie Hall'],
-      videoPlaceholder: true,
-    },
-    {
-      title: 'Telemetry & Dashboards Deep Dive',
-      type: 'Engineering Demo',
-      icon: '📊',
-      description:
-        'Presented telemetry dashboards, monitoring strategies, and performance insights to engineering and product stakeholders, bridging the gap between technical metrics and business outcomes.',
-      tags: ['New Relic', 'Dashboards', 'Stakeholders'],
-      videoPlaceholder: true,
-    },
-    {
       title: 'Toastmasters Leadership Sessions',
       type: 'Area Director Workshops',
-      icon: '🏆',
+      icon: '',
       description:
         'As Area Director, delivered keynote speeches, communication training, and executive presence coaching across multiple clubs. Mentored speakers at all levels of their communication journey.',
       tags: ['Leadership', 'Communication', 'Coaching'],

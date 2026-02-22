@@ -7,12 +7,21 @@
       @for (group of skillGroups; track group.category) {
         <div class="card skill-card reveal">
           <div class="skill-header">
-            <span class="skill-icon">{{ group.icon }}</span>
+            @if (group.icon) {
+              <span class="skill-icon">{{ group.icon }}</span>
+            }
             <h3>{{ group.category }}</h3>
           </div>
           <div class="skill-tags">
-            @for (skill of group.skills; track skill) {
-              <span class="skill-tag">{{ skill }}</span>
+            @for (skill of group.skills; track skill.name) {
+              <span
+                class="skill-tag skill-tag-wrap"
+                tabindex="0"
+                [attr.data-tooltip]="skill.tooltip"
+                [attr.aria-label]="skill.tooltip ? skill.name + ': ' + skill.tooltip : skill.name"
+              >
+                {{ skill.name }}
+              </span>
             }
           </div>
         </div>
