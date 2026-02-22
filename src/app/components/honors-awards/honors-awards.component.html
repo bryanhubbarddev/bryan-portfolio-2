@@ -1,0 +1,18 @@
+<section id="honors-awards" class="section honors-awards">
+  <div class="max-w">
+    <p class="section-label reveal">Recognition</p>
+    <h2 class="section-title reveal">Honors &amp; <span>Awards</span></h2>
+
+    <div class="awards-grid">
+      @for (award of awards; track award.title) {
+        <div class="award-card card reveal">
+          <div class="award-type">Honor / Award</div>
+          <h4 class="award-title">{{ award.title }}</h4>
+          <p class="award-issuer">{{ award.issuer }}</p>
+          <p class="award-description">{{ award.description }}</p>
+          <span class="award-year">{{ award.year }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

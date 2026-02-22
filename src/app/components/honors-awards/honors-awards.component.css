@@ -1,0 +1,66 @@
+.honors-awards {
+  background: #0d1117;
+  border-top: 1px solid #1e2d3d;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.award-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem;
+}
+
+.award-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #00d4aa;
+  margin-bottom: 0.25rem;
+}
+
+.award-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  color: #f0f4f8;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.award-issuer {
+  font-size: 0.9rem;
+  color: #00d4aa;
+  font-weight: 500;
+}
+
+.award-description {
+  font-size: 0.85rem;
+  color: #8899aa;
+  line-height: 1.5;
+  flex: 1;
+  margin: 0.5rem 0;
+}
+
+.award-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: #4a5568;
+  background: #0d1117;
+  border: 1px solid #1e2d3d;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -56,6 +56,9 @@
       </div>
       <div class="certs-grid">
         <div class="cert-card card" *ngFor="let t of toastmasters">
+          @if (t.image) {
+            <img [src]="t.image" [alt]="t.title" class="cert-image" />
+          }
           <div class="cert-type">{{ t.type }}</div>
           <h4 class="cert-title">{{ t.title }}</h4>
           <p class="cert-issuer">{{ t.issuer }}</p>

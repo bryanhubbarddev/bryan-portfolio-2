@@ -77,14 +77,16 @@ export class EducationComponent implements OnInit {
       title: 'Level 5 — Dynamic Leadership',
       issuer: 'Toastmasters International Pathways',
       year: '2024',
-      type: 'Certificate of Completion'
+      type: 'Certificate of Completion',
+      image: 'assets/images/DynamicLeadership.jpeg'
     },
     {
       icon: '🏆',
       title: 'Level 5 — Engaging Humor',
       issuer: 'Toastmasters International Pathways',
       year: '2024',
-      type: 'Certificate of Completion'
+      type: 'Certificate of Completion',
+      image: 'assets/images/Humor.png'
     },
     {
       icon: '🏅',
