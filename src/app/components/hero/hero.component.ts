@@ -88,6 +88,11 @@ export class HeroComponent implements OnInit, OnDestroy {
     this.activeTag.update((current: string | null) => (current === name ? null : name));
   }
 
+  handleTagKeydown(name: string, event: Event) {
+    event.preventDefault();
+    this.setActiveTag(name);
+  }
+
   @HostListener('document:click', ['$event']) onDocClick(e: Event) {
     if (!(e.target as HTMLElement).closest('.tech-float')) this.activeTag.set(null);
   }
