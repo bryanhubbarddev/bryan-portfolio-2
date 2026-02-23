@@ -3,7 +3,8 @@
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   padding: 120px clamp(1.5rem, 6vw, 6rem) 80px;
 }
 
@@ -249,13 +250,18 @@
 
 .tech-float {
   position: absolute;
-  right: clamp(1.5rem, 6vw, 8rem);
-  top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  bottom: clamp(1.5rem, 4vw, 3rem);
+  transform: translateX(-50%);
+  z-index: 2;
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  animation: fadeInRight 0.8s ease 1s both;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: min(90vw, 800px);
+  animation: fadeInUp 0.8s ease 1s both;
+  overflow: visible;
 }
 
 .tech-float .tag-wrap {
@@ -274,7 +280,7 @@
   padding: 0.4rem 0.9rem;
   border-radius: 100px;
   transition: all 0.3s ease;
-  cursor: default;
+  cursor: pointer;
 }
 
 /* Custom tooltip - visible on hover */
@@ -301,24 +307,28 @@
 }
 
 .tech-float .tag-wrap:hover .tag::after,
-.tech-float .tag-wrap:focus-within .tag::after {
+.tech-float .tag-wrap:focus-within .tag::after,
+.tech-float .tag-wrap.tag-active .tag::after {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) scale(1);
 }
 
-.tech-float .tag:hover {
+.tech-float .tag:hover,
+.tech-float .tag-wrap.tag-active .tag {
   color: #00d4aa;
   border-color: rgba(0,212,170,0.2);
   background: rgba(0,212,170,0.05);
 }
 
 .tech-float-caption {
+  flex-basis: 100%;
   margin: 0.5rem 0 0;
   font-size: 0.6rem;
   letter-spacing: 0.06em;
   color: #3d4f5c;
   font-weight: 500;
+  text-align: center;
 }
 
 .tech-float .tag-wrap:nth-child(1) .tag { animation: tagFloat 2.5s ease-in-out 0.3s infinite alternate; }
@@ -355,10 +365,13 @@
 }
 
 @media (max-width: 900px) {
-  .tech-float { display: none; }
+  .hero {
+    padding-bottom: 180px;
+  }
   .hero-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-bottom: 100px;
   }
   .hero-photo-wrap {
     justify-self: center;
@@ -368,12 +381,25 @@
     width: 180px;
     height: 180px;
   }
+  .tech-float {
+    bottom: 1rem;
+  }
 }
 
 @media (max-width: 600px) {
+  .hero {
+    padding-bottom: 200px;
+  }
+  .hero-content {
+    margin-bottom: 120px;
+  }
   .stat-number { font-size: 1.5rem; }
   .hero-photo {
     width: 150px;
     height: 150px;
+  }
+  .tech-float .tag {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.7rem;
   }
 }
