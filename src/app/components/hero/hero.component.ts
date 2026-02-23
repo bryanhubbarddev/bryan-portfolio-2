@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,6 +11,22 @@ import { CommonModule } from '@angular/common';
 export class HeroComponent implements OnInit, OnDestroy {
   displayText = signal('');
   phraseComplete = signal(false);
+  activeTag = signal<string | null>(null);
+
+  techTags = [
+    { name: 'Angular', tooltip: 'Web application framework' },
+    { name: 'TypeScript', tooltip: 'Typed JavaScript' },
+    { name: 'React', tooltip: 'UI library' },
+    { name: 'JavaScript', tooltip: 'Programming language' },
+    { name: 'Next.js', tooltip: 'React framework' },
+    { name: 'Spring Boot', tooltip: 'Backend framework' },
+    { name: 'Java', tooltip: 'Programming language' },
+    { name: 'Python', tooltip: 'Programming language' },
+    { name: 'SQL', tooltip: 'Structured Query Language' },
+    { name: 'NRQL', tooltip: 'New Relic Query Language' },
+    { name: 'Flutter', tooltip: 'Cross-platform UI toolkit' },
+    { name: 'Dart', tooltip: 'Programming language (Flutter)' },
+  ];
 
   private titles = [
     'Software Engineer',
@@ -66,5 +82,18 @@ export class HeroComponent implements OnInit, OnDestroy {
   scrollToAbout(event: Event) {
     event.preventDefault();
     document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  setActiveTag(name: string) {
+    this.activeTag.update((current: string | null) => (current === name ? null : name));
+  }
+
+  handleTagKeydown(name: string, event: Event) {
+    event.preventDefault();
+    this.setActiveTag(name);
+  }
+
+  @HostListener('document:click', ['$event']) onDocClick(e: Event) {
+    if (!(e.target as HTMLElement).closest('.tech-float')) this.activeTag.set(null);
   }
 }
