@@ -67,20 +67,25 @@
     </div>
   </div>
 
-  <!-- Floating tech tags (12: frameworks → languages → query) -->
-  <div class="tech-float">
-    <span class="tag-wrap"><span class="tag" tabindex="0" role="button" aria-label="Angular: Web application framework" data-tooltip="Web application framework">Angular</span></span>
-    <span class="tag-wrap"><span class="tag" tabindex="0" role="button" aria-label="React: UI library" data-tooltip="UI library">React</span></span>
-    <span class="tag-wrap"><span class="tag" tabindex="0" role="button" aria-label="Next.js: React framework" data-tooltip="React framework">Next.js</span></span>
-    <span class="tag-wrap"><span class="tag" tabindex="0" role="button" aria-label="Flutter: Cross-platform UI toolkit" data-tooltip="Cross-platform UI toolkit">Flutter</span></span>
-    <span class="tag-wrap"><span class="tag" tabindex="0" role="button" aria-label="Dart: Programming language (Flutter)" data-tooltip="Programming language (Flutter)">Dart</span></span>
-    <span class="tag-wrap"><span class="tag" tabindex="0" role="button" aria-label="Spring Boot: Backend framework" data-tooltip="Backend framework">Spring Boot</span></span>
-    <span class="tag-wrap"><span class="tag" tabindex="0" role="button" aria-label="TypeScript: Typed JavaScript" data-tooltip="Typed JavaScript">TypeScript</span></span>
-    <span class="tag-wrap"><span class="tag" tabindex="0" role="button" aria-label="JavaScript: Programming language" data-tooltip="Programming language">JavaScript</span></span>
-    <span class="tag-wrap"><span class="tag" tabindex="0" role="button" aria-label="Java: Programming language" data-tooltip="Programming language">Java</span></span>
-    <span class="tag-wrap"><span class="tag" tabindex="0" role="button" aria-label="Python: Programming language" data-tooltip="Programming language">Python</span></span>
-    <span class="tag-wrap"><span class="tag" tabindex="0" role="button" aria-label="SQL: Structured Query Language" data-tooltip="Structured Query Language">SQL</span></span>
-    <span class="tag-wrap"><span class="tag" tabindex="0" role="button" aria-label="NRQL: New Relic Query Language" data-tooltip="New Relic Query Language">NRQL</span></span>
+  <!-- Floating tech tags -->
+  <div class="tech-float" (click)="$event.stopPropagation()">
+    @for (t of techTags; track t.name) {
+      <span
+        class="tag-wrap"
+        [class.tag-active]="activeTag() === t.name"
+        (click)="setActiveTag(t.name)"
+      >
+        <span
+          class="tag"
+          tabindex="0"
+          role="button"
+          [attr.aria-label]="t.name + ': ' + t.tooltip"
+          [attr.data-tooltip]="t.tooltip"
+          (keydown.enter)="setActiveTag(t.name)"
+          (keydown.space)="setActiveTag(t.name); $event.preventDefault()"
+        >{{ t.name }}</span>
+      </span>
+    }
     <p class="tech-float-caption">Coding languages I know</p>
   </div>
 </section>
