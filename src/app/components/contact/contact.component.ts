@@ -19,10 +19,19 @@ export class ContactComponent implements OnInit {
 
   copyEmail(event: Event): void {
     event.preventDefault();
-    navigator.clipboard.writeText('bryan.hubbard.dev@gmail.com').then(() => {
-      this.copied = true;
-      setTimeout(() => (this.copied = false), 2000);
-    });
+    const emailLink = this.links.find((l) => l.label === 'Email');
+    const email = emailLink?.value ?? (emailLink?.href || '').replace('mailto:', '');
+    if (!email) return;
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        this.copied = true;
+        setTimeout(() => (this.copied = false), 2000);
+      })
+      .catch((err) => {
+        console.error('Failed to copy email to clipboard:', err);
+        alert('Failed to copy. Please copy manually: ' + email);
+      });
   }
 
   ngOnInit() {
