@@ -1,6 +1,6 @@
 # Deploy to Firebase Production
 
-This project uses **Firebase Hosting** for the live site at `https://bryan-hubbard-dev.web.app`.
+This project uses **Firebase Hosting** for the live site at `https://bryanhubbard.dev`.
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ npx firebase deploy
 
 ### 5. Verify
 
-Open: **https://bryan-hubbard-dev.web.app**
+Open: **https://bryanhubbard.dev**
 
 ---
 
