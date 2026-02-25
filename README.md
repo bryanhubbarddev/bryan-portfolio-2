@@ -1,6 +1,6 @@
 # Bryan B. Hubbard II — Portfolio
 
-> 🔗 **Live:** [bryan-hubbard-dev.web.app](https://bryan-hubbard-dev.web.app)
+> 🔗 **Live:** [bryanhubbard.dev](https://bryanhubbard.dev)
 
 **As a software developer**, I want to connect with teams and opportunities where I can bring my whole story—from Carnegie Hall to the retail floor to enterprise engineering, from mentoring staff and principal engineers to presenting at conferences—so that recruiters and hiring managers can see the full scope of what I offer: technical depth, leadership, and a unique perspective that bridges technology and people.
 
