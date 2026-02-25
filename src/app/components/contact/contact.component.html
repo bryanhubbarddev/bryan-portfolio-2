@@ -23,7 +23,7 @@
 
       <div class="contact-links">
         @for (link of links; track link.label) {
-          <a [href]="link.href" target="_blank" class="contact-link">
+          <a [href]="link.href" target="_blank" rel="noopener noreferrer" class="contact-link">
             <span class="link-icon">{{ link.icon }}</span>
             <div class="link-text">
               <span class="link-label">{{ link.label }}</span>
