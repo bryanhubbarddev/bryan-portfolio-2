@@ -40,6 +40,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
   background: #00d4aa;
   color: #080c10 !important;
   padding: 1rem 2.5rem;
@@ -110,6 +113,27 @@
 }
 
 .contact-link:hover .link-value { color: #00d4aa; }
+
+.email-link { text-decoration: none; }
+
+.copy-email-btn {
+  margin-left: auto;
+  padding: 0.35rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #8899aa;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.copy-email-btn:hover {
+  color: #00d4aa;
+  opacity: 1;
+  background: rgba(0, 212, 170, 0.1);
+}
 
 .footer {
   border-top: 1px solid #1e2d3d;

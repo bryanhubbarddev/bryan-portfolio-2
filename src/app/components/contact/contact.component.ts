@@ -9,12 +9,21 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
+  copied = false;
   links = [
     { label: 'Website', value: 'bryanhubbard.dev', href: 'https://bryanhubbard.dev', icon: '🌐' },
     { label: 'Email', value: 'bryan.hubbard.dev@gmail.com', href: 'mailto:bryan.hubbard.dev@gmail.com', icon: '✉️' },
     { label: 'LinkedIn', value: 'linkedin.com/in/bryan-b-hubbard-ll-ms-ed', href: 'https://www.linkedin.com/in/bryan-b-hubbard-ll-ms-ed', icon: '💼' },
     { label: 'GitHub', value: 'github.com/bryanhubbarddev', href: 'https://github.com/bryanhubbarddev', icon: '🐙' },
   ];
+
+  copyEmail(event: Event): void {
+    event.preventDefault();
+    navigator.clipboard.writeText('bryan.hubbard.dev@gmail.com').then(() => {
+      this.copied = true;
+      setTimeout(() => (this.copied = false), 2000);
+    });
+  }
 
   ngOnInit() {
     setTimeout(() => {
