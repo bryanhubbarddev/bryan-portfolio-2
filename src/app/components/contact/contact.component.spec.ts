@@ -37,38 +37,42 @@ describe('ContactComponent', () => {
       writeTextSpy = spyOn(navigator.clipboard, 'writeText').and.returnValue(Promise.resolve());
     });
 
-    it('should call clipboard writeText with the email from links', async () => {
+    it('should call clipboard writeText with the email from the link', async () => {
+      const emailLink = component.links.find((l) => l.label === 'Email')!;
       const event = new Event('click');
       spyOn(event, 'preventDefault');
-      component.copyEmail(event);
+      component.copyEmail(emailLink, event);
       await fixture.whenStable();
       expect(writeTextSpy).toHaveBeenCalledWith('bryan.hubbard.dev@gmail.com');
       expect(event.preventDefault).toHaveBeenCalled();
     });
 
-    it('should set copied to true after successful copy', async () => {
-      component.copyEmail(new Event('click'));
+    it('should set copiedLabel to link label after successful copy', async () => {
+      const emailLink = component.links.find((l) => l.label === 'Email')!;
+      component.copyEmail(emailLink, new Event('click'));
       await fixture.whenStable();
-      expect(component.copied).toBe(true);
+      expect(component.copiedLabel).toBe('Email');
     });
 
-    it('should reset copied to false after 2 seconds', fakeAsync(() => {
-      component.copyEmail(new Event('click'));
+    it('should reset copiedLabel to null after 2 seconds', fakeAsync(() => {
+      const emailLink = component.links.find((l) => l.label === 'Email')!;
+      component.copyEmail(emailLink, new Event('click'));
       tick();
-      expect(component.copied).toBe(true);
+      expect(component.copiedLabel).toBe('Email');
       tick(2000);
-      expect(component.copied).toBe(false);
+      expect(component.copiedLabel).toBeNull();
     }));
 
     it('should handle clipboard failure gracefully', async () => {
       writeTextSpy.and.returnValue(Promise.reject(new Error('Clipboard denied')));
       spyOn(console, 'error');
       spyOn(window, 'alert');
-      component.copyEmail(new Event('click'));
+      const emailLink = component.links.find((l) => l.label === 'Email')!;
+      component.copyEmail(emailLink, new Event('click'));
       await fixture.whenStable();
       expect(console.error).toHaveBeenCalled();
       expect(window.alert).toHaveBeenCalledWith(jasmine.stringContaining('Failed to copy'));
-      expect(component.copied).toBe(false);
+      expect(component.copiedLabel).toBeNull();
     });
   });
 });
