@@ -23,7 +23,7 @@
 
       <div class="contact-links">
         @for (link of links; track link.label) {
-          @if (link.href.startsWith('mailto:')) {
+          @if (link.href?.startsWith('mailto:')) {
             <div class="contact-link email-link-wrap">
               <a [href]="link.href" class="email-link-content">
                 <span class="link-icon">{{ link.icon }}</span>
