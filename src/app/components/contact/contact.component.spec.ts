@@ -63,15 +63,35 @@ describe('ContactComponent', () => {
       expect(component.copiedLabel).toBeNull();
     }));
 
-    it('should handle clipboard failure gracefully', async () => {
+    it('should show inline error when clipboard fails', async () => {
       writeTextSpy.and.returnValue(Promise.reject(new Error('Clipboard denied')));
       spyOn(console, 'error');
-      spyOn(window, 'alert');
       const emailLink = component.links.find((l) => l.label === 'Email')!;
       component.copyEmail(emailLink, new Event('click'));
       await fixture.whenStable();
       expect(console.error).toHaveBeenCalled();
-      expect(window.alert).toHaveBeenCalledWith(jasmine.stringContaining('Failed to copy'));
+      expect(component.copyErrorLabel).toBe('Email');
+      expect(component.copiedLabel).toBeNull();
+    });
+
+    it('should clear copyErrorLabel after 4 seconds', fakeAsync(() => {
+      writeTextSpy.and.returnValue(Promise.reject(new Error('Clipboard denied')));
+      spyOn(console, 'error');
+      const emailLink = component.links.find((l) => l.label === 'Email')!;
+      component.copyEmail(emailLink, new Event('click'));
+      tick();
+      expect(component.copyErrorLabel).toBe('Email');
+      tick(4000);
+      expect(component.copyErrorLabel).toBeNull();
+    }));
+
+    it('should return early and not copy when link has no email', async () => {
+      const linkWithNoEmail = { label: 'Email', value: '', href: '' };
+      const event = new Event('click');
+      spyOn(event, 'preventDefault');
+      component.copyEmail(linkWithNoEmail, event);
+      await fixture.whenStable();
+      expect(writeTextSpy).not.toHaveBeenCalled();
       expect(component.copiedLabel).toBeNull();
     });
   });

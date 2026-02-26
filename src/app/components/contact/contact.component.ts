@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ContactComponent implements OnInit {
   copiedLabel: string | null = null;
+  copyErrorLabel: string | null = null;
   links = [
     { label: 'Website', value: 'bryanhubbard.dev', href: 'https://bryanhubbard.dev', icon: '🌐' },
     { label: 'Email', value: 'bryan.hubbard.dev@gmail.com', href: 'mailto:bryan.hubbard.dev@gmail.com', icon: '✉️' },
@@ -29,7 +30,8 @@ export class ContactComponent implements OnInit {
       })
       .catch((err) => {
         console.error('Failed to copy email to clipboard:', err);
-        alert('Failed to copy. Please copy manually: ' + email);
+        this.copyErrorLabel = link.label;
+        setTimeout(() => (this.copyErrorLabel = null), 4000);
       });
   }
 

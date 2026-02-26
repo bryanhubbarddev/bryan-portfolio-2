@@ -24,19 +24,21 @@
       <div class="contact-links">
         @for (link of links; track link.label) {
           @if (link.href.startsWith('mailto:')) {
-            <a [href]="link.href" class="contact-link email-link">
-              <span class="link-icon">{{ link.icon }}</span>
-              <div class="link-text">
-                <span class="link-label">{{ link.label }}</span>
-                <span class="link-value">{{ copiedLabel === link.label ? 'Copied!' : link.value }}</span>
-              </div>
-              <button type="button" class="copy-email-btn" (click)="$event.stopPropagation(); copyEmail(link, $event)" title="Copy email" aria-label="Copy email">
+            <div class="contact-link email-link-wrap">
+              <a [href]="link.href" class="email-link-content">
+                <span class="link-icon">{{ link.icon }}</span>
+                <div class="link-text">
+                  <span class="link-label">{{ link.label }}</span>
+                  <span class="link-value" [class.copy-error]="copyErrorLabel === link.label">{{ copiedLabel === link.label ? 'Copied!' : copyErrorLabel === link.label ? 'Copy failed' : link.value }}</span>
+                </div>
+              </a>
+              <button type="button" class="copy-email-btn" (click)="copyEmail(link, $event)" title="Copy email" aria-label="Copy email">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2"/>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
                 </svg>
               </button>
-            </a>
+            </div>
           } @else {
             <a [href]="link.href" target="_blank" rel="noopener noreferrer" class="contact-link">
               <span class="link-icon">{{ link.icon }}</span>
