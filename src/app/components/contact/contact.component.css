@@ -40,6 +40,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
   background: #00d4aa;
   color: #080c10 !important;
   padding: 1rem 2.5rem;
@@ -103,6 +106,10 @@
   transition: color 0.2s ease;
 }
 
+.link-value.copy-error {
+  color: #e07c5e;
+}
+
 .contact-link:hover {
   border-color: rgba(0,212,170,0.2);
   background: rgba(0,212,170,0.05);
@@ -110,6 +117,50 @@
 }
 
 .contact-link:hover .link-value { color: #00d4aa; }
+
+.email-link-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.email-link-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #8899aa !important;
+}
+
+.email-link-content:hover .link-value { color: #00d4aa; }
+
+.copy-email-btn {
+  margin-left: auto;
+  padding: 0.35rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #8899aa;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.copy-email-btn:hover {
+  color: #00d4aa;
+  opacity: 1;
+  background: rgba(0, 212, 170, 0.1);
+}
+
+.copy-email-btn:focus-visible {
+  outline: 2px solid #00d4aa;
+  outline-offset: 2px;
+  color: #00d4aa;
+  opacity: 1;
+  background: rgba(0, 212, 170, 0.12);
+}
 
 .footer {
   border-top: 1px solid #1e2d3d;
