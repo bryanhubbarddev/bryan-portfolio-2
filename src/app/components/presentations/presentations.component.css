@@ -18,6 +18,43 @@
   gap: 1.5rem;
 }
 
+.pres-slides {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.pres-slides::-webkit-scrollbar {
+  height: 6px;
+}
+
+.pres-slides::-webkit-scrollbar-track {
+  background: #1e2d3d;
+  border-radius: 3px;
+}
+
+.pres-slides::-webkit-scrollbar-thumb {
+  background: #00d4aa;
+  border-radius: 3px;
+}
+
+.pres-slide-image {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  border-radius: 8px;
+  border: 1px solid #1e2d3d;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  width: 280px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
 .pres-card .pres-icon {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -59,6 +96,22 @@
 
 .video-placeholder:hover span { color: #00d4aa; }
 
+.pres-video-wrap {
+  width: 100%;
+  margin-bottom: 1.25rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #1e2d3d;
+  background: #0d1117;
+}
+
+.pres-video {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
 .play-btn {
   width: 48px;
   height: 48px;
@@ -97,6 +150,26 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+.pres-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  background: #00d4aa;
+  color: #050709;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.pres-link:hover {
+  background: #12e0b8;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 600px) {

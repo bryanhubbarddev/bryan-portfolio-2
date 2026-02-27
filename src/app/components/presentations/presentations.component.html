@@ -15,16 +15,36 @@
             <div class="pres-icon">{{ pres.icon }}</div>
           }
 
-          <!-- Video placeholder -->
-          @if (pres.videoPlaceholder) {
-            <div class="video-placeholder">
-              <div class="play-btn">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-              <span>Video Coming Soon</span>
+          <!-- Slides, video, or video placeholder -->
+          @if (pres.slides?.length) {
+            <div class="pres-slides">
+              @for (slide of pres.slides; track slide.src) {
+                <img
+                  [src]="slide.src"
+                  [alt]="slide.alt"
+                  loading="lazy"
+                  class="pres-slide-image"
+                />
+              }
             </div>
+          } @else if (pres.video) {
+            <div class="pres-video-wrap">
+              <video class="pres-video" controls preload="metadata" playsinline>
+                <source [src]="pres.video" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          } @else {
+            @if (pres.videoPlaceholder) {
+              <div class="video-placeholder">
+                <div class="play-btn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+                <span>Video Coming Soon</span>
+              </div>
+            }
           }
 
           <div class="pres-type">{{ pres.type }}</div>
@@ -36,6 +56,17 @@
               <span class="skill-tag">{{ tag }}</span>
             }
           </div>
+
+          @if (pres.link) {
+            <a
+              [href]="pres.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="pres-link"
+            >
+              {{ pres.linkLabel || 'View Presentation' }}
+            </a>
+          }
         </div>
       }
     </div>
