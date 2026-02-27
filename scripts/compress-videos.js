@@ -35,7 +35,8 @@ for (const name of videos) {
   console.log(`\nCompressing ${name} (${sizeMB} MB)...`);
 
   // CRF 32, scale to 720p, H.264 - target under 95MB
-  const cmd = `"${ffmpegPath}" -y -i "${inputPath}" -c:v libx264 -crf 32 -preset medium -vf "scale=-2:720" -c:a aac -b:a 128k "${outputPath}"`;
+  // -movflags +faststart moves moov atom to start for faster web playback
+  const cmd = `"${ffmpegPath}" -y -i "${inputPath}" -c:v libx264 -crf 32 -preset medium -vf "scale=-2:720" -c:a aac -b:a 128k -movflags +faststart "${outputPath}"`;
   
   try {
     execSync(cmd, { stdio: 'inherit', shell: true });
