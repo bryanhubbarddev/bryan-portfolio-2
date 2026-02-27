@@ -42,8 +42,23 @@ for (const name of videos) {
     const outMB = getSizeMB(outputPath);
     console.log(`  Done: ${outMB} MB`);
     if (parseFloat(outMB) < MAX_MB) {
-      fs.renameSync(outputPath, inputPath);
-      console.log(`  Replaced original.`);
+      try {
+        // On Windows, fs.renameSync cannot overwrite an existing file.
+        // Use copy-then-delete to reliably replace the original.
+        fs.copyFileSync(outputPath, inputPath);
+        fs.unlinkSync(outputPath);
+        console.log(`  Replaced original.`);
+      } catch (replaceErr) {
+        console.error(`  Failed to replace original with compressed file: ${replaceErr.message}`);
+        // Best-effort cleanup of the temporary compressed file.
+        try {
+          if (fs.existsSync(outputPath)) {
+            fs.unlinkSync(outputPath);
+          }
+        } catch (_) {
+          // Ignore cleanup errors.
+        }
+      }
     } else {
       console.log(`  Still over ${MAX_MB}MB - keeping both. Try higher CRF.`);
     }
