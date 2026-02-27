@@ -49,9 +49,10 @@
   border-radius: 8px;
   border: 1px solid #1e2d3d;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-  height: 200px;
   width: 280px;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
 }
 
 .pres-card .pres-icon {
