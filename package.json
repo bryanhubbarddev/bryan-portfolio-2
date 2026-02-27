@@ -26,8 +26,6 @@
     "@angular-devkit/build-angular": "19.2.18",
     "@angular/cli": "19.2.18",
     "@angular/compiler-cli": "19.2.18",
-    "@ffmpeg/core": "^0.12.10",
-    "@ffmpeg/ffmpeg": "^0.12.15",
     "@types/jasmine": "^6.0.0",
     "@types/node": "^18.18.0",
     "ffmpeg-static": "^5.3.0",
