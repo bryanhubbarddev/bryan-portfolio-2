@@ -20,6 +20,9 @@ Thumbs.db
 
 # Build
 *.log
+
+# Compressed temp files (keep scripts/ tracked)
+*-compressed.mp4
 npm-debug.log*
 .env
 .env.local
