@@ -47,7 +47,7 @@ export class ProjectsComponent implements OnInit {
       title: 'HomerCon Admin Application',
       mainConcept: 'Virtual conference logistics management',
       section: 'Enterprise & Observability',
-      team: 'OrangeMethod Software Engineering (OMOW & OME) Apprenticeship Program',
+      team: 'Software Engineer Development Team, OrangeMethod Software Engineering Apprenticeship Program',
       description:
         'Built a full-stack administrative application for managing virtual conference logistics including timeslots, tracks, and scheduling.',
       keyContributions: [
