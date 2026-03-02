@@ -32,8 +32,8 @@ export class PresentationsComponent implements OnInit {
           alt: 'Tech Ed virtual session with Nadia Bilchik and Bryan Hubbard',
         },
       ],
-      link: 'https://1drv.ms/p/c/578C06DAEDDB1D9C/IQDFIFJHJb_3ToCB6jCvCFiKASGdTLIj5bdDhC1343hfdho?e=lei8mR',
-      linkLabel: 'View Full Tech Ed Presentation',
+      link: 'assets/documents/From-AI-to-Strategy.pdf',
+      linkLabel: 'View Full Tech Ed Presentation (PDF)',
     },
     {
       title: 'HomerCon — Innovation & Observability',
