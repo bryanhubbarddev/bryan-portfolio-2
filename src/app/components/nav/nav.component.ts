@@ -18,7 +18,7 @@ export class NavComponent {
     { label: 'Skills', href: '#skills' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Orange Inspiration', href: '#orange-inspiration' },
+    { label: 'Honors', href: '#honors-awards' },
     { label: 'Speaking', href: '#presentations' },
     { label: 'Contact', href: '#contact' },
   ];

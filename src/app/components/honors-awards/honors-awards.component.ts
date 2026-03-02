@@ -11,34 +11,69 @@ import { CommonModule } from '@angular/common';
 export class HonorsAwardsComponent implements OnInit {
   awards = [
     {
-      title: 'Best in Technology (BiT)',
+      title: 'Best in Technology (BiT) & Orange Heart',
       issuer: 'The Home Depot',
       year: '2024',
-      description: 'Recognition for outstanding technology contributions and innovation.',
+      description: 'Outstanding technology contributions, innovation, and embodying company values.',
+      images: [
+        'assets/images/BitAll.png',
+        'assets/images/BitHand.png',
+        'assets/images/BiT.png',
+      ],
     },
     {
-      title: 'Orange Heart',
+      title: 'The Home Depot Diamond Award, 60 Homer Awards',
+      issuer: 'The Home Depot',
+      year: '2022',
+      description: 'Diamond recognition and 60 Homer Awards.',
+      images: [
+        'assets/images/DiamondGroup.png',
+        'assets/images/Diamond.png',
+        'assets/images/DiamondDinnner.png',
+      ],
+    },
+    {
+      title: "Featured on THD Technology's Front Door",
+      issuer: 'The Home Depot',
+      year: '2023–2024',
+      description: 'Featured at HomerCon and Toastmasters.',
+    },
+    {
+      title: 'HomerCon Leadership Committee',
       issuer: 'The Home Depot',
       year: '2024',
-      description: 'Award for embodying company values and making a meaningful impact.',
+      description: 'Served on the Leadership Committee of HomerCon.',
+      images: [
+        'assets/images/HomerCon2024.png',
+        'assets/images/HomerCon2025.png',
+        'assets/images/HomerHomerCon2025.png',
+      ],
+    },
+    {
+      title: 'Executive Homer Award — Taking Care of Our People',
+      issuer: 'The Home Depot',
+      year: '2020, 2023, 2024',
+      description: 'Three-time recipient for taking care of our people.',
     },
     {
       title: 'Area D43 Director — Dedicated Service & Leadership',
       issuer: 'Toastmasters International',
       year: '2023–2024',
-      description: 'Award for leadership and service as Area Director across Georgia and New York.',
-    },
-    {
-      title: 'Carnegie Hall',
-      issuer: 'Performance',
-      year: '—',
-      description: 'Performed at Carnegie Hall — a milestone in artistic and professional excellence.',
+      description: 'Leadership and service as Area Director across Georgia and New York.',
+      image: 'assets/images/AreaLeadership.png',
     },
     {
       title: 'Area Director Club Reporting Best Practices Training Award',
       issuer: 'Toastmasters — Division E Team',
       year: '2024',
       description: 'Certificate of appreciation for training excellence in club reporting.',
+      image: 'assets/images/CertAreaDirector.png',
+    },
+    {
+      title: 'Carnegie Hall',
+      issuer: 'Performance',
+      year: '—',
+      description: 'Performed at Carnegie Hall — a milestone in artistic and professional excellence.',
     },
   ];
 

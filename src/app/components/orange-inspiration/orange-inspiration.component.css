@@ -8,6 +8,27 @@
   max-width: 720px;
 }
 
+.oi-image-link {
+  display: block;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 212, 170, 0.2);
+  transition: all 0.3s ease;
+}
+
+.oi-image-link:hover {
+  border-color: rgba(0, 212, 170, 0.5);
+  box-shadow: 0 0 30px rgba(0, 212, 170, 0.15);
+}
+
+.oi-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
 .oi-card {
   padding: 2.5rem;
 }

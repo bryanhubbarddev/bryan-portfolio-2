@@ -6,10 +6,9 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { PresentationsComponent } from './components/presentations/presentations.component';
+import { HonorsAwardsComponent } from './components/honors-awards/honors-awards.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { EducationComponent } from './components/education/education.component';
-import { OrangeInspirationComponent } from './components/orange-inspiration/orange-inspiration.component';
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -21,8 +20,8 @@ import { OrangeInspirationComponent } from './components/orange-inspiration/oran
     SkillsComponent,
     ExperienceComponent,
     ProjectsComponent,
-    OrangeInspirationComponent,
     PresentationsComponent,
+    HonorsAwardsComponent,
     ContactComponent,
   ],
   template: `
@@ -34,7 +33,7 @@ import { OrangeInspirationComponent } from './components/orange-inspiration/oran
       <app-skills></app-skills>
       <app-experience></app-experience>
       <app-projects></app-projects>
-      <app-orange-inspiration></app-orange-inspiration>
+      <app-honors-awards></app-honors-awards>
       <app-presentations></app-presentations>
       <app-contact></app-contact>
     </main>

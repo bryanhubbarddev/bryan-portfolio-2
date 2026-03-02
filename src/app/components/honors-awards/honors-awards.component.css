@@ -16,6 +16,18 @@
   padding: 2rem;
 }
 
+.award-image {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.award-image:last-of-type {
+  margin-bottom: 0;
+}
+
 .award-type {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;

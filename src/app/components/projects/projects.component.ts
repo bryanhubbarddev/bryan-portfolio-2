@@ -19,6 +19,10 @@ export interface Project {
   section?: string;
   percent?: string;
   figures?: string[];
+  image?: string;
+  images?: string[];
+  appUrl?: string;
+  linkLabel?: string;
   team: string;
   description: string;
   keyContributions: string[];
@@ -62,6 +66,7 @@ export class ProjectsComponent implements OnInit {
         'REST APIs',
         'Frontend & Backend Architecture',
       ],
+      image: 'assets/images/OMOW.png',
       featured: false,
     },
     {
@@ -168,6 +173,9 @@ export class ProjectsComponent implements OnInit {
         'Data Validation',
         'Documentation',
       ],
+      image: 'assets/images/Orange.png',
+      appUrl: 'https://ng-orange-inspiration.web.app/',
+      linkLabel: 'View Live App',
       featured: false,
     },
   ];

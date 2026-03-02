@@ -69,13 +69,24 @@
               </div>
             }
 
-            <div class="key-contributions">
-              <h4>Key Contributions</h4>
-              <ul>
-                @for (contribution of project.keyContributions; track contribution) {
-                  <li>{{ contribution }}</li>
-                }
-              </ul>
+            <div class="key-contributions-row" [class.has-image]="project.images?.length || project.image">
+              <div class="key-contributions">
+                <h4>Key Contributions</h4>
+                <ul>
+                  @for (contribution of project.keyContributions; track contribution) {
+                    <li>{{ contribution }}</li>
+                  }
+                </ul>
+              </div>
+              @if (project.images?.length) {
+                <div class="project-images">
+                  @for (img of project.images; track img) {
+                    <img [src]="img" [alt]="project.title" class="project-image" loading="lazy" />
+                  }
+                </div>
+              } @else if (project.image) {
+                <img [src]="project.image" [alt]="project.title" class="project-image" loading="lazy" />
+              }
             </div>
 
             @if (project.supportingSystems && project.supportingSystems.length) {
@@ -93,6 +104,15 @@
                 }
               </div>
             </div>
+
+            @if (project.appUrl) {
+              <a [href]="project.appUrl" target="_blank" rel="noopener noreferrer" class="btn-primary project-app-link">
+                {{ project.linkLabel || 'View Live App' }}
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            }
           </div>
         </div>
           }

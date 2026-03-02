@@ -1,11 +1,18 @@
 <section id="honors-awards" class="section honors-awards">
   <div class="max-w">
     <p class="section-label reveal">Recognition</p>
-    <h2 class="section-title reveal">Honors &amp; <span>Awards</span></h2>
+    <h2 class="section-title reveal">Honors &amp; <span>Recognition</span></h2>
 
     <div class="awards-grid">
       @for (award of awards; track award.title) {
         <div class="award-card card reveal">
+          @if (award.images?.length) {
+            @for (img of award.images; track img) {
+              <img [src]="img" alt="{{ award.title }}" class="award-image" loading="lazy" />
+            }
+          } @else if (award.image) {
+            <img [src]="award.image" alt="{{ award.title }}" class="award-image" loading="lazy" />
+          }
           <div class="award-type">Honor / Award</div>
           <h4 class="award-title">{{ award.title }}</h4>
           <p class="award-issuer">{{ award.issuer }}</p>
