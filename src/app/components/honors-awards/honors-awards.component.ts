@@ -18,7 +18,7 @@ export class HonorsAwardsComponent implements OnInit {
       images: [
         'assets/images/BitAll.png',
         'assets/images/BitHand.png',
-        'assets/images/BiT.png',
+        'assets/images/BitBryanHubbard.png',
       ],
     },
     {
@@ -31,12 +31,6 @@ export class HonorsAwardsComponent implements OnInit {
         'assets/images/Diamond.png',
         'assets/images/DiamondDinnner.png',
       ],
-    },
-    {
-      title: "Featured on THD Technology's Front Door",
-      issuer: 'The Home Depot',
-      year: '2023–2024',
-      description: 'Featured at HomerCon and Toastmasters.',
     },
     {
       title: 'HomerCon Leadership Committee',
