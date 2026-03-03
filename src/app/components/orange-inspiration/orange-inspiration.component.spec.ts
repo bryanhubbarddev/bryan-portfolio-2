@@ -19,9 +19,9 @@ describe('OrangeInspirationComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render the section title', () => {
+  it('should render the View Live App link', () => {
     const el = fixture.nativeElement as HTMLElement;
-    expect(el.textContent).toContain('Orange Inspiration');
+    expect(el.textContent).toContain('View Live App');
   });
 
   it('should display 4 tech tags', () => {
