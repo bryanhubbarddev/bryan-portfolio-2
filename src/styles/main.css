@@ -178,6 +178,7 @@ a:hover { color: #ffffff; }
   height: 100px;
   margin: 0.5rem auto;
   perspective: 400px;
+  overflow: hidden;
 }
 
 .book-coming-soon {

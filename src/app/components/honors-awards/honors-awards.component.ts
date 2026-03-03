@@ -35,7 +35,7 @@ export class HonorsAwardsComponent implements OnInit {
     {
       title: 'HomerCon Leadership Committee',
       issuer: 'The Home Depot',
-      year: '2024',
+      year: '2023–2026',
       description: 'Served on the Leadership Committee of HomerCon.',
       images: [
         'assets/images/HomerCon2024.png',

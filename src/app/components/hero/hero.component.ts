@@ -55,7 +55,12 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.typeWriter();
-    this.typeBookTitle();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.bookTitleDisplay.set(this.bookTitle);
+      this.bookTitleComplete.set(true);
+    } else {
+      this.typeBookTitle();
+    }
   }
 
   ngOnDestroy() {
