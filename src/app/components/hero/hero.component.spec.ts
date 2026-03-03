@@ -34,6 +34,12 @@ describe('HeroComponent', () => {
     expect(el.textContent).toContain('View My Work');
   });
 
+  it('should render the book graphic element', () => {
+    const el = fixture.nativeElement as HTMLElement;
+    const bookAnimated = el.querySelector('.book-animated');
+    expect(bookAnimated).toBeTruthy();
+  });
+
   describe('tech tags', () => {
     it('should set tag as active when clicked', () => {
       fixture.detectChanges();
