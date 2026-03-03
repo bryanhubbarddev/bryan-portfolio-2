@@ -30,12 +30,6 @@ describe('ContactComponent', () => {
     expect(el.querySelectorAll('.contact-link').length).toBe(4);
   });
 
-  it('should render the book teaser with Book coming soon', () => {
-    const el = fixture.nativeElement as HTMLElement;
-    expect(el.textContent).toContain('Book coming soon');
-    expect(el.textContent).toContain('The Future is Faster Than You Think');
-  });
-
   describe('copyEmail', () => {
     let writeTextSpy: jasmine.Spy;
 

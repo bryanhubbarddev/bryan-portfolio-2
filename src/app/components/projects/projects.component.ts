@@ -42,6 +42,7 @@ export interface Project {
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [
+    /* Project 01: No image. OMOW.png was removed — unused asset to avoid shipping in build. */
     {
       number: '01',
       title: 'HomerCon Admin Application',
@@ -66,7 +67,6 @@ export class ProjectsComponent implements OnInit {
         'REST APIs',
         'Frontend & Backend Architecture',
       ],
-      image: 'assets/images/OMOW.png',
       featured: false,
     },
     {
