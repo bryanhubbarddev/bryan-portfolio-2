@@ -66,7 +66,6 @@ export class ProjectsComponent implements OnInit {
         'REST APIs',
         'Frontend & Backend Architecture',
       ],
-      image: 'assets/images/OMOW.png',
       featured: false,
     },
     {

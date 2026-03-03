@@ -27,9 +27,7 @@ export class HonorsAwardsComponent implements OnInit {
       year: '2022',
       description: 'Diamond recognition and 60 Homer Awards.',
       images: [
-        'assets/images/DiamondGroup.png',
         'assets/images/Diamond.png',
-        'assets/images/DiamondDinner.png',
       ],
     },
     {
