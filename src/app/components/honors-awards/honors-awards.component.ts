@@ -29,7 +29,7 @@ export class HonorsAwardsComponent implements OnInit {
       images: [
         'assets/images/DiamondGroup.png',
         'assets/images/Diamond.png',
-        'assets/images/DiamondDinnner.png',
+        'assets/images/DiamondDinner.png',
       ],
     },
     {
@@ -48,20 +48,6 @@ export class HonorsAwardsComponent implements OnInit {
       issuer: 'The Home Depot',
       year: '2020, 2023, 2024',
       description: 'Three-time recipient for taking care of our people.',
-    },
-    {
-      title: 'Area D43 Director — Dedicated Service & Leadership',
-      issuer: 'Toastmasters International',
-      year: '2023–2024',
-      description: 'Leadership and service as Area Director across Georgia and New York.',
-      image: 'assets/images/AreaLeadership.png',
-    },
-    {
-      title: 'Area Director Club Reporting Best Practices Training Award',
-      issuer: 'Toastmasters — Division E Team',
-      year: '2024',
-      description: 'Certificate of appreciation for training excellence in club reporting.',
-      image: 'assets/images/CertAreaDirector.png',
     },
     {
       title: 'Carnegie Hall',

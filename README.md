@@ -16,7 +16,9 @@ A production-grade personal portfolio built with **Angular 19+** (standalone com
 - Interactive experience tab switcher
 - Career timeline
 - Skills showcase (Angular, React, Next.js, Flutter, React Native, and more)
-- Presentations section with video placeholder support
+- **Honors & Recognition** section with award cards and images
+- Presentations section with video support
+- Featured projects with images and live app links
 - Fully responsive (mobile-first)
 - CI-ready headless testing (Karma + ChromeHeadlessNoSandbox)
 - Firebase Hosting deployment
@@ -32,10 +34,7 @@ A production-grade personal portfolio built with **Angular 19+** (standalone com
 # Install dependencies
 npm install
 
-# Navigate into the project (use your folder name, e.g. cd bryan-portfolio or cd bryan-portfolio-2)
-cd bryan-portfolio
-
-# Start the dev server (use npx if Angular CLI isn't installed globally)
+# Start the dev server
 npx ng serve
 ```
 
@@ -45,13 +44,13 @@ Then open http://localhost:4200
 
 ### Running Tests
 ```bash
-npx ng test --no-watch
+npm test -- --watch=false
 ```
-Runs Karma + Jasmine in headless Chrome. CI-ready with ChromeHeadlessNoSandbox.
+Runs Karma + Jasmine in headless Chrome. CI-ready with `ChromeHeadlessNoSandbox`.
 
 ### Build for Production
 ```bash
-npx ng build
+npm run build
 ```
 Output goes to `dist/bryan-portfolio/browser` — ready for Firebase Hosting (or Netlify, Vercel, GitHub Pages).
 
@@ -59,38 +58,63 @@ Output goes to `dist/bryan-portfolio/browser` — ready for Firebase Hosting (or
 ```
 src/
   assets/
-    images/               - Hero photo, education/certification images, favicon
+    images/               - Hero photo, education/certification images, award images
+    documents/            - PDFs (e.g. Tech Ed presentation)
+    videos/               - Demo videos (HomerCon, Toastmasters)
   app/
     components/
       nav/                - Fixed navigation with hamburger (mobile)
-      hero/               - Full-screen hero, typewriter (PM, Toastmasters, Leadership Mentor), floating tech tags
+      hero/               - Full-screen hero, typewriter, floating tech tags
       about/              - Bio and career timeline
-      skills/             - Skill card grid (Angular, React, Next.js, Flutter, React Native, etc.)
       education/          - Degrees and certifications
+      skills/             - Skill card grid
       experience/         - Interactive tabbed job history
-      projects/           - Featured project cards
+      projects/           - Featured project cards (with images, View Live App links)
+      honors-awards/      - Honors & Recognition section
       presentations/      - Speaking and video section
-      orange-inspiration/ - Orange Heart / BiT inspiration section
       contact/            - Contact with social links
   styles/
-    main.css              - Global styles with all colors and typography
+    main.css              - Global styles, typography, section layout
   index.html
   main.ts
 ```
+
+## Test Structure
+Tests follow Angular's default convention: each component has a `.spec.ts` file alongside its implementation.
+
+- **Framework:** Jasmine
+- **Runner:** Karma
+- **Browser:** ChromeHeadlessNoSandbox (headless, no-sandbox for CI)
+- **Location:** `src/app/components/**/*.spec.ts`
+- **Run once:** `npm test -- --watch=false`
+
+| Component      | Spec File                          |
+|----------------|------------------------------------|
+| App            | `app.component.spec.ts`            |
+| Nav            | (no spec; tested via App)          |
+| Hero           | `hero/hero.component.spec.ts`      |
+| About          | `about/about.component.spec.ts`   |
+| Education      | `education/education.component.spec.ts` |
+| Skills         | `skills/skills.component.spec.ts` |
+| Experience     | `experience/experience.component.spec.ts` |
+| Projects       | `projects/projects.component.spec.ts` |
+| Honors & Awards| `honors-awards/honors-awards.component.spec.ts` |
+| Presentations  | `presentations/presentations.component.spec.ts` |
+| Contact        | `contact/contact.component.spec.ts` |
 
 ## Design System
 All colors and typography are written as plain CSS values directly in each component's `.css` file and in `src/styles/main.css`. To change the accent color, search and replace `#00d4aa` with your preferred color across all CSS files.
 
 ## Adding Videos
-In `presentations.component.ts`, update the `videoPlaceholder: true` items and add a `videoUrl` field. Then in the HTML, replace the placeholder div with an `<iframe>` embed.
+In `presentations.component.ts`, add a `video` field with a base-relative path (e.g. `assets/videos/your-video.mp4`). Use base-relative paths so videos work when the app is served from a sub-path.
 
 ## Deploying to Firebase
 1. Install Firebase CLI: `npm install firebase-tools --save-dev`
 2. Login: `npx firebase login`
 3. Initialize: `npx firebase init hosting` (choose `dist/bryan-portfolio/browser`, single-page app: Yes)
-4. Build and deploy: `npx ng build` then `npx firebase deploy`
+4. Build and deploy: `npm run build` then `npx firebase deploy`
 
 Update the Live URL at the top of this README after your first successful deploy.
 
 ---
-Built by Bryan B. Hubbard II
+Built by Bryan Hubbard

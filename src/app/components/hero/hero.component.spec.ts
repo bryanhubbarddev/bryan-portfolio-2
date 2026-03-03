@@ -34,6 +34,20 @@ describe('HeroComponent', () => {
     expect(el.textContent).toContain('View My Work');
   });
 
+  it('should render the book teaser with Book coming soon', () => {
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.textContent).toContain('Book coming soon');
+  });
+
+  it('should render the animated book element', () => {
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.querySelector('.book-animated')).toBeTruthy();
+  });
+
+  it('should have book title text that types out', () => {
+    expect(component.bookTitleDisplay()).toBeDefined();
+  });
+
   describe('tech tags', () => {
     it('should set tag as active when clicked', () => {
       fixture.detectChanges();

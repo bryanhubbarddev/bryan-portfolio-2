@@ -8,6 +8,20 @@
 
   <div class="hero-content">
     <div class="hero-text">
+    <div class="hero-book-teaser">
+      <span class="book-title typewriter-glow" [class.phrase-complete]="bookTitleComplete()">
+        {{ bookTitleDisplay() }}
+        @if (!bookTitleComplete()) {
+          <span class="cursor">|</span>
+        }
+      </span>
+      <div class="book-animated" aria-hidden="true">
+        <div class="book-cover book-cover-left"></div>
+        <div class="book-spine"></div>
+        <div class="book-cover book-cover-right"></div>
+      </div>
+      <span class="book-coming-soon">Book coming soon</span>
+    </div>
     <div class="hero-label">
       <span class="dot"></span>
       Available for Opportunities

@@ -87,20 +87,6 @@ export class EducationComponent implements OnInit {
       year: '2024',
       type: 'Certificate of Completion',
       image: 'assets/images/Humor.png'
-    },
-    {
-      icon: '🏅',
-      title: 'Area D43 Director — Dedicated Service & Leadership',
-      issuer: 'Toastmasters International',
-      year: '2023–2024',
-      type: 'Award'
-    },
-    {
-      icon: '🏅',
-      title: 'Area Director Club Reporting Best Practices Training Award',
-      issuer: 'Toastmasters — Division E Team',
-      year: '2024',
-      type: 'Certificate of Appreciation'
     }
   ];
 

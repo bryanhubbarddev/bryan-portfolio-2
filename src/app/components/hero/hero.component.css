@@ -65,6 +65,57 @@
   min-width: 0;
 }
 
+.hero-book-teaser {
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  max-width: 320px;
+  text-align: center;
+}
+
+.hero-book-teaser .book-title {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: #00d4aa;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.hero-book-teaser .book-title.typewriter-glow {
+  animation: book-title-glow 0.5s ease-in-out infinite alternate;
+}
+
+.hero-book-teaser .book-title.typewriter-glow.phrase-complete {
+  animation: book-title-glow-steady 2s ease forwards;
+}
+
+.hero-book-teaser .book-title .cursor {
+  color: #00d4aa;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes book-title-glow {
+  from { text-shadow: 0 0 8px rgba(0, 212, 170, 0.4), 0 0 20px rgba(0, 212, 170, 0.2); }
+  to { text-shadow: 0 0 16px rgba(0, 212, 170, 0.8), 0 0 40px rgba(0, 212, 170, 0.4); }
+}
+
+@keyframes book-title-glow-steady {
+  to { text-shadow: 0 0 20px rgba(0, 212, 170, 0.6), 0 0 50px rgba(0, 212, 170, 0.3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-book-teaser .book-title.typewriter-glow {
+    animation: none;
+    text-shadow: 0 0 20px rgba(0, 212, 170, 0.6), 0 0 50px rgba(0, 212, 170, 0.3);
+  }
+}
+
+.hero-book-teaser .book-coming-soon {
+  font-size: 1.15rem;
+  color: #f0b429;
+}
+
 .hero-photo-wrap {
   justify-self: end;
 }
@@ -74,9 +125,21 @@
   height: 220px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid rgba(0, 212, 170, 0.35);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  animation: fadeInUp 0.8s ease 0.3s both;
+  border: 3px solid rgba(0, 212, 170, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 212, 170, 0.4), 0 0 80px rgba(0, 212, 170, 0.2);
+  animation: fadeInUp 0.8s ease 0.3s both, photo-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes photo-glow {
+  from { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 212, 170, 0.3), 0 0 60px rgba(0, 212, 170, 0.15); }
+  to { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 50px rgba(0, 212, 170, 0.5), 0 0 100px rgba(0, 212, 170, 0.25); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo {
+    animation: fadeInUp 0.8s ease 0.3s both;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 212, 170, 0.4), 0 0 80px rgba(0, 212, 170, 0.2);
+  }
 }
 
 .hero-label {

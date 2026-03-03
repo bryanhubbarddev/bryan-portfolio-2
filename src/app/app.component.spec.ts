@@ -24,4 +24,11 @@ describe('AppComponent', () => {
     expect(el.querySelector('app-nav')).toBeTruthy();
     expect(el.querySelector('main')).toBeTruthy();
   });
+
+  it('should include hero, about, and contact sections', () => {
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.querySelector('app-hero')).toBeTruthy();
+    expect(el.querySelector('app-about')).toBeTruthy();
+    expect(el.querySelector('app-contact')).toBeTruthy();
+  });
 });

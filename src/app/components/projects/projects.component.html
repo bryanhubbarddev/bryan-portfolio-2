@@ -69,7 +69,7 @@
               </div>
             }
 
-            <div class="key-contributions-row" [class.has-image]="project.images?.length || project.image">
+            <div class="key-contributions-row" [class.has-image]="!!(project.images?.length || project.image)">
               <div class="key-contributions">
                 <h4>Key Contributions</h4>
                 <ul>

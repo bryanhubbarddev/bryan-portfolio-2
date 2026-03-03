@@ -13,6 +13,12 @@ export class HeroComponent implements OnInit, OnDestroy {
   phraseComplete = signal(false);
   activeTag = signal<string | null>(null);
 
+  bookTitleDisplay = signal('');
+  bookTitleComplete = signal(false);
+  private readonly bookTitle = 'The Future is Faster Than You Think';
+  private bookTitleIndex = 0;
+  private bookTitleTimeoutId: ReturnType<typeof setTimeout> | null = null;
+
   techTags = [
     { name: 'Angular', tooltip: 'Web application framework' },
     { name: 'TypeScript', tooltip: 'Typed JavaScript' },
@@ -49,10 +55,27 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.typeWriter();
+    this.typeBookTitle();
   }
 
   ngOnDestroy() {
     if (this.timeoutId) clearTimeout(this.timeoutId);
+    if (this.bookTitleTimeoutId) clearTimeout(this.bookTitleTimeoutId);
+  }
+
+  private typeBookTitle() {
+    if (this.bookTitleIndex < this.bookTitle.length) {
+      this.bookTitleDisplay.set(this.bookTitle.slice(0, ++this.bookTitleIndex));
+      this.bookTitleTimeoutId = setTimeout(() => this.typeBookTitle(), 80);
+    } else {
+      this.bookTitleComplete.set(true);
+      this.bookTitleTimeoutId = setTimeout(() => {
+        this.bookTitleIndex = 0;
+        this.bookTitleDisplay.set('');
+        this.bookTitleComplete.set(false);
+        this.typeBookTitle();
+      }, 4000);
+    }
   }
 
   private typeWriter() {

@@ -10,8 +10,6 @@
             @for (img of award.images; track img) {
               <img [src]="img" alt="{{ award.title }}" class="award-image" loading="lazy" />
             }
-          } @else if (award.image) {
-            <img [src]="award.image" alt="{{ award.title }}" class="award-image" loading="lazy" />
           }
           <div class="award-type">Honor / Award</div>
           <h4 class="award-title">{{ award.title }}</h4>
