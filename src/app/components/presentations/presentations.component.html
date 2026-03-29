@@ -29,8 +29,13 @@
             </div>
           } @else if (pres.video) {
             <div class="pres-video-wrap">
-              <video class="pres-video" controls preload="metadata" playsinline>
-                <source [src]="pres.video" type="video/mp4" />
+              <video
+                class="pres-video"
+                [src]="pres.video"
+                controls
+                preload="metadata"
+                playsinline
+              >
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -57,7 +62,20 @@
             }
           </div>
 
-          @if (pres.link) {
+          @if (pres.links?.length) {
+            <div class="pres-links">
+              @for (item of pres.links; track item.href) {
+                <a
+                  [href]="item.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="pres-link"
+                >
+                  {{ item.label }}
+                </a>
+              }
+            </div>
+          } @else if (pres.link) {
             <a
               [href]="pres.link"
               target="_blank"

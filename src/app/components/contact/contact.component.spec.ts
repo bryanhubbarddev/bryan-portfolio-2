@@ -25,9 +25,9 @@ describe('ContactComponent', () => {
     expect(el.textContent).toContain("Let's Build Something");
   });
 
-  it('should display 4 contact links', () => {
+  it('should display 6 contact links', () => {
     const el = fixture.nativeElement as HTMLElement;
-    expect(el.querySelectorAll('.contact-link').length).toBe(4);
+    expect(el.querySelectorAll('.contact-link').length).toBe(6);
   });
 
   describe('copyEmail', () => {

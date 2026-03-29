@@ -55,8 +55,10 @@ export class PresentationsComponent implements OnInit {
         'As Area Director, I support multiple clubs through keynote speeches, communication training, and executive presence coaching. Area direction is about guiding clubs, mentoring leaders, and helping members grow—from first speeches to advanced leadership.',
       tags: ['Leadership', 'Communication', 'Coaching'],
       videoPlaceholder: false,
-      link: 'https://www.toastmasters.org/',
-      linkLabel: 'Learn what Toastmasters offers',
+      links: [
+        { href: 'https://www.toastmasters.org/', label: 'Learn what Toastmasters offers' },
+        { href: 'https://www.toastmasters.org/magazine', label: 'Toastmaster magazine' },
+      ],
     },
   ];
 
