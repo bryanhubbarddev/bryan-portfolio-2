@@ -36,7 +36,7 @@ describe('PresentationsComponent', () => {
     expect(slideImages.length).toBe(3);
   });
 
-  it('should render HomerCon with a video and source element', () => {
+  it('should render HomerCon with a video src', () => {
     const el = fixture.nativeElement as HTMLElement;
     const cards = Array.from(el.querySelectorAll('.pres-card')) as HTMLElement[];
     const homerConCard = cards.find(card =>
@@ -47,13 +47,11 @@ describe('PresentationsComponent', () => {
     const video = homerConCard.querySelector('video') as HTMLVideoElement | null;
     expect(video).withContext('HomerCon video element not found').toBeTruthy();
     if (!video) return;
-    const source = video.querySelector('source') as HTMLSourceElement | null;
-    expect(source).withContext('HomerCon video source element not found').toBeTruthy();
-    if (!source) return;
-    expect(source.src || source.getAttribute('src')).withContext('HomerCon video source src should not be empty').toBeTruthy();
+    expect(video.getAttribute('src') || video.src).withContext('HomerCon video src should not be empty').toBeTruthy();
+    expect(video.src || '').toContain('Demo-Final');
   });
 
-  it('should render Toastmasters with an external link', () => {
+  it('should render Toastmasters with Toastmasters.org and magazine links', () => {
     const el = fixture.nativeElement as HTMLElement;
     const cards = Array.from(el.querySelectorAll('.pres-card')) as HTMLElement[];
     const toastmastersCard = cards.find(card =>
@@ -61,12 +59,13 @@ describe('PresentationsComponent', () => {
     );
     expect(toastmastersCard).withContext('Toastmasters presentation card not found').toBeTruthy();
     if (!toastmastersCard) return;
-    const link = toastmastersCard.querySelector('a.pres-link') as HTMLAnchorElement | null;
-    expect(link).withContext('Toastmasters external link not found').toBeTruthy();
-    if (!link) return;
-    expect(link.href).withContext('Toastmasters link href should not be empty').toBeTruthy();
-    expect(link.textContent && link.textContent.trim().length > 0)
-      .withContext('Toastmasters link label should not be empty')
+    const links = toastmastersCard.querySelectorAll('a.pres-link');
+    expect(links.length).withContext('Toastmasters should have two pres-link anchors').toBe(2);
+    const hrefs = Array.from(links).map((a) => (a as HTMLAnchorElement).href);
+    expect(hrefs.some((h) => h.includes('toastmasters.org/'))).toBeTrue();
+    expect(hrefs.some((h) => h.includes('toastmasters.org/magazine'))).toBeTrue();
+    expect(Array.from(links).every((a) => a.textContent && a.textContent.trim().length > 0))
+      .withContext('Toastmasters link labels should not be empty')
       .toBeTrue();
   });
 });

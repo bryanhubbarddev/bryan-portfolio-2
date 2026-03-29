@@ -14,8 +14,15 @@ export class ContactComponent implements OnInit {
   links = [
     { label: 'Website', value: 'bryanhubbard.dev', href: 'https://bryanhubbard.dev', icon: '🌐' },
     { label: 'Email', value: 'bryan.hubbard.dev@gmail.com', href: 'mailto:bryan.hubbard.dev@gmail.com', icon: '✉️' },
+    { label: 'Résumé', value: 'PDF', href: 'assets/documents/bryan-hubbard-resume.pdf', icon: '📄' },
     { label: 'LinkedIn', value: 'linkedin.com/in/bryan-b-hubbard-ll-ms-ed', href: 'https://www.linkedin.com/in/bryan-b-hubbard-ll-ms-ed', icon: '💼' },
     { label: 'GitHub', value: 'github.com/bryanhubbarddev', href: 'https://github.com/bryanhubbarddev', icon: '🐙' },
+    {
+      label: 'Credentials',
+      value: 'Skillsoft digital badges',
+      href: 'https://skillsoft.digitalbadges.skillsoft.com/profile/bryanhubbard681737/wallet',
+      icon: '🎓',
+    },
   ];
 
   copyEmail(link: { label: string; value?: string; href?: string }, event: Event): void {
