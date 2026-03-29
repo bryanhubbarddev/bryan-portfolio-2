@@ -43,9 +43,9 @@ export class PresentationsComponent implements OnInit {
         'Delivered enterprise technology presentations at The Home Depot\'s internal HomerCon conference, focusing on innovation, observability strategy, and technology transformation.',
       tags: ['Observability', 'Innovation', 'Enterprise Tech'],
       videoPlaceholder: false,
-      // Use base-relative path (no leading slash) so it respects Angular's baseHref.
-      // Root-absolute paths (/assets/...) break when the site is served from a sub-path.
-      video: 'assets/videos/Demo-Final.mp4',
+      // Root-absolute so the MP4 URL is correct at the domain root (e.g. bryanhubbard.dev).
+      // If the app is ever hosted under a sub-path, set base href / use relative assets accordingly.
+      video: '/assets/videos/Demo-Final.mp4',
     },
     {
       title: 'Toastmasters Leadership Sessions',
