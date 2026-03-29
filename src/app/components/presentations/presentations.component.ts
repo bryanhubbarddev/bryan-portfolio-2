@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+/** Bump ?v= when replacing the file or if browsers serve a stale cached response. */
+const HOMERCON_VIDEO_SRC = '/assets/videos/Demo-Final.mp4?v=2';
+
 @Component({
   selector: 'app-presentations',
   standalone: true,
@@ -43,8 +46,7 @@ export class PresentationsComponent implements OnInit {
         'Delivered enterprise technology presentations at The Home Depot\'s internal HomerCon conference, focusing on innovation, observability strategy, and technology transformation.',
       tags: ['Observability', 'Innovation', 'Enterprise Tech'],
       videoPlaceholder: false,
-      // Root-absolute: media URLs are more reliable than base-relative + <base href> with [src] on <video> in some browsers.
-      video: '/assets/videos/Demo-Final.mp4',
+      video: HOMERCON_VIDEO_SRC,
     },
     {
       title: 'Toastmasters International',
