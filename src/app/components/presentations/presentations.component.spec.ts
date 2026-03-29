@@ -36,7 +36,14 @@ describe('PresentationsComponent', () => {
     expect(slideImages.length).toBe(3);
   });
 
-  it('should render HomerCon with a video src', () => {
+  it('should render HomerCon with a video src matching component data', () => {
+    const homerCon = component.presentations.find(
+      (p): p is (typeof p) & { video: string } =>
+        'video' in p && typeof (p as { video?: string }).video === 'string' && p.title.includes('HomerCon')
+    );
+    expect(homerCon?.video).withContext('HomerCon entry with video not found').toBeTruthy();
+    if (!homerCon) return;
+
     const el = fixture.nativeElement as HTMLElement;
     const cards = Array.from(el.querySelectorAll('.pres-card')) as HTMLElement[];
     const homerConCard = cards.find(card =>
@@ -47,8 +54,9 @@ describe('PresentationsComponent', () => {
     const video = homerConCard.querySelector('video') as HTMLVideoElement | null;
     expect(video).withContext('HomerCon video element not found').toBeTruthy();
     if (!video) return;
-    expect(video.getAttribute('src') || video.src).withContext('HomerCon video src should not be empty').toBeTruthy();
-    expect(video.src || '').toContain('Demo-Final');
+
+    const expectedUrl = new URL(homerCon.video, document.baseURI).href;
+    expect(video.src).withContext('video src should match presentations[].video').toBe(expectedUrl);
   });
 
   it('should render Toastmasters with Toastmasters.org and magazine links', () => {
