@@ -55,8 +55,12 @@ describe('PresentationsComponent', () => {
     expect(video).withContext('HomerCon video element not found').toBeTruthy();
     if (!video) return;
 
+    const source = video.querySelector('source') as HTMLSourceElement | null;
+    expect(source).withContext('HomerCon video should have an mp4 source').toBeTruthy();
+    if (!source) return;
+
     const expectedUrl = new URL(homerCon.video, document.baseURI).href;
-    expect(video.src).withContext('video src should match presentations[].video').toBe(expectedUrl);
+    expect(source.src).withContext('source src should match presentations[].video').toBe(expectedUrl);
   });
 
   it('should render Toastmasters with Toastmasters.org and magazine links', () => {

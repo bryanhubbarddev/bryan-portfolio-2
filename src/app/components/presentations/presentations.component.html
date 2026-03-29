@@ -31,11 +31,11 @@
             <div class="pres-video-wrap">
               <video
                 class="pres-video"
-                [src]="pres.video"
                 controls
                 preload="metadata"
                 playsinline
               >
+                <source [src]="pres.video" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
