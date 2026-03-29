@@ -43,8 +43,8 @@ export class PresentationsComponent implements OnInit {
         'Delivered enterprise technology presentations at The Home Depot\'s internal HomerCon conference, focusing on innovation, observability strategy, and technology transformation.',
       tags: ['Observability', 'Innovation', 'Enterprise Tech'],
       videoPlaceholder: false,
-      // Base-relative path; resolves via <base href="/"> in index.html (same style as slides/PDF in this component).
-      video: 'assets/videos/Demo-Final.mp4',
+      // Root-absolute: media URLs are more reliable than base-relative + <base href> with [src] on <video> in some browsers.
+      video: '/assets/videos/Demo-Final.mp4',
     },
     {
       title: 'Toastmasters International',
