@@ -112,7 +112,7 @@ export class EducationComponent implements OnInit {
     'React': 'React UI library',
   };
 
-  skillsoftWalletUrl = 'https://skillsoft.digitalbadges.skillsoft.com/profile/bryanhubbard681737/wallet';
+  skillsoftWalletUrl = 'https://skillsoft.digitalbadges.skillsoft.com/profile/bbh1700/wallet';
   linkedInUrl = 'https://www.linkedin.com/in/bryan-b-hubbard-ll-ms-ed';
 
   certificationGroups: CertificationGroup[] = [

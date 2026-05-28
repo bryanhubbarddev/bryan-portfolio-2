@@ -20,7 +20,7 @@ export class ContactComponent implements OnInit {
     {
       label: 'Credentials',
       value: 'Skillsoft digital badges',
-      href: 'https://skillsoft.digitalbadges.skillsoft.com/profile/bryanhubbard681737/wallet',
+      href: 'https://skillsoft.digitalbadges.skillsoft.com/profile/bbh1700/wallet',
       icon: '🎓',
     },
   ];
